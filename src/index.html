@@ -26,32 +26,38 @@
 
            </div>
            
-            <form action="#">
-                <p>
-                    <label for="title"></label>
+            <form action="#" id="task-form">
+                <p class="title">
+                      <label for="title"></label>
                     <input type="text" id="title" placeholder="Title">
                 </p>
-                <p>
+                <p class="description">
                     <label for="description"></label>
                     <input type="text" id="description" placeholder="Description">
                 </p>
-                <p>
+                <div class="options-container">
+                <p class="dueDate">
                     <label for="dueDate"></label>
                     <input type="date" id="dueDate">
                 </p>
-                <p>
+                <p class="priority">
                     <label for="priority"></label>
                     <select name="Priority" id="priority">
                         <option value="">--Priority--</option>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
-                    </select>
-                      
-                </p>                
-                <button class="button-input">click to add</button>
+                    </select>    
+                </p>    
+
+
+                <button class="button-input">
+                    <!-- <svg id="arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11,20V7.75L5.75,13L5,12.34L11.5,5.84L18,12.34L17.25,13L12,7.75V20H11Z" /></svg> -->
+                </button>
+                </div>
             </form>
         </div>
+
     </main>
 </body>
 </html>

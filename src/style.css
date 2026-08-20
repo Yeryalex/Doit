@@ -15,7 +15,6 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-color: rgb(91, 55, 8);
   }s
   
   img, picture, video, canvas, svg {
@@ -55,7 +54,53 @@ main {
   position: relative;
 }
 
+#task-form {
+  display: grid;
+  grid-template-columns: 100px 100px  1fr 20px;
+  border: 1px solid gray;
+  background-color: rgb(10, 10, 10);
+  margin: 10px 20px;
+  border-radius: 5px;
+}
+
 .task {
   color: white;
   border: 1px solid white;
 }
+
+#arrow-up {
+  fill: gray;
+  height: 20px;
+  width: 20px;
+}
+
+.title {
+  grid-column: 1 / 5;
+}
+
+.description {
+  grid-area: 2 / 1 / 3 / 5;
+}
+
+.options-container {
+  grid-column: 1/5;
+  display: grid;
+  grid-template-columns: 130px 130px  1fr 20px;
+}
+
+.dueDate {
+  grid-column: 1/ 2;
+}
+
+.priority {
+  grid-column: 2/ 3;
+}
+
+.button-input {
+  grid-column: 4 / 5;
+  background-image: url(./icons/arrow-up.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
