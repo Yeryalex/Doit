@@ -21,10 +21,36 @@
 
             <button>Add new Prokect +</button>
         </div>
-        <div class="task-container">
-            <!-- <div class="balls"></div>
-            <div class="balls"></div>
-            <div class="balls"></div> -->
+        <div class="main-container">
+           <div class="task-container">
+
+           </div>
+           
+            <form action="#">
+                <p>
+                    <label for="title"></label>
+                    <input type="text" id="title" placeholder="Title">
+                </p>
+                <p>
+                    <label for="description"></label>
+                    <input type="text" id="description" placeholder="Description">
+                </p>
+                <p>
+                    <label for="dueDate"></label>
+                    <input type="date" id="dueDate">
+                </p>
+                <p>
+                    <label for="priority"></label>
+                    <select name="Priority" id="priority">
+                        <option value="">--Priority--</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                      
+                </p>                
+                <button class="button-input">click to add</button>
+            </form>
         </div>
     </main>
 </body>

@@ -15,7 +15,8 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-  }
+    background-color: rgb(91, 55, 8);
+  }s
   
   img, picture, video, canvas, svg {
     display: block;
@@ -49,32 +50,12 @@ main {
   color: white;
 }
 
-.task-container {
+.main-container {
   background-color: rgb(75, 75, 75);
   position: relative;
 }
 
-/* .balls {
-  border: 1px solid rgb(13, 74, 161);
-  height: 400px;
-  width: 400px;
-  border-radius: 100%;
-  background-color: rgb(39, 100, 214);
-  box-shadow: 3px 3px 3px rgb(13, 74, 161);
+.task {
+  color: white;
+  border: 1px solid white;
 }
-
-.task-container :first-child {
-  position: absolute;
-  right: -100px;
-}
-
-.task-container :nth-child(2) {
-  position: absolute;
-  right: -30px;
-  top: 100px;
-}
-.task-container :last-child {
-  position: absolute;
-  right: -30px;
-  bottom: 100px;
-} */
