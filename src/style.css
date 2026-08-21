@@ -129,7 +129,7 @@ main {
 }
 
 #title {
-  font-size: x-large;
+  font-size: larger;
 }
 
 #dueDate, #priority {
