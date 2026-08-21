@@ -14,7 +14,7 @@ const taskContainer = document.querySelector(".task-container");
 form.addEventListener("submit", (e) => {
     
     e.preventDefault();
-    const date = format(new Date(dueDate.value), "MMM dd yyyy")
+    const date = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy")
     const task = taskGenerator(title.value, description.value, date, priority.value);
     taskContainer.appendChild(task);
 
