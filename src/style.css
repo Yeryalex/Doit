@@ -50,17 +50,19 @@ main {
 }
 
 .main-container {
+  display: grid;
+  grid-template-rows: 1fr 130px;
   background-color: rgb(75, 75, 75);
-  position: relative;
+  padding: 20px 40px;
 }
 
 #task-form {
   display: grid;
-  grid-template-columns: 100px 100px  1fr 20px;
-  border: 1px solid gray;
+  grid-template-columns: 100px 100px 1fr 30px;
+  border: 2px solid gray;
   background-color: rgb(10, 10, 10);
-  margin: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
+  padding: 5px 2px 2px 20px;
 }
 
 .task {
@@ -70,8 +72,16 @@ main {
 
 #arrow-up {
   fill: gray;
-  height: 20px;
-  width: 20px;
+}
+
+.button-arrow {
+  grid-column: 4 / 5;
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 .title {
@@ -85,7 +95,8 @@ main {
 .options-container {
   grid-column: 1/5;
   display: grid;
-  grid-template-columns: 130px 130px  1fr 20px;
+  grid-template-columns: 150px 150px  1fr 40px;
+  margin: 10px 0 5px 0;
 }
 
 .dueDate {
@@ -96,11 +107,22 @@ main {
   grid-column: 2/ 3;
 }
 
-.button-input {
-  grid-column: 4 / 5;
-  background-image: url(./icons/arrow-up.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
+#title, #description {
+  color: white;
+  width: 100%;
+  background-color: rgb(10, 10, 10);
+  outline: none;
+  border: none;
 }
 
+#title {
+  font-size: x-large;
+}
 
+#dueDate, #priority {
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  height: 30px;
+  padding: 5px;
+}
