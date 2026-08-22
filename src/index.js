@@ -8,8 +8,8 @@ const title = document.querySelector("#title");
 const description = document.querySelector("#description");
 const dueDate = document.querySelector("#dueDate");
 const priority = document.querySelector("#priority");
-const buttonArrow = document.querySelector(".button-arrow");
-const taskContainer = document.querySelector(".task-container");
+// const buttonArrow = document.querySelector(".button-arrow");
+const taskContainer = document.querySelector(".main-task-container");
 
 const dates = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy");
 
