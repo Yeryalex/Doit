@@ -10,9 +10,14 @@ export class taskInfo {
         this.dueDate = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy");;
         this.priority = priority;
         this.id = self.crypto.randomUUID();
+        this.isChecked = false;
     }
 
     getTitle() {
         return(this.title)
+    }
+
+    revertCheck() {
+        this.isChecked = true;
     }
 }
