@@ -1,18 +1,28 @@
 import "./style.css"
 import { taskGenerator } from "./taskGenerator.js"
 import { taskInfo } from "./icons/taskClass.js";
-// import {format} from "date-fns";
 
 const form = document.querySelector("#task-form");
 const title = document.querySelector("#title");
 const description = document.querySelector("#description");
 const dueDate = document.querySelector("#dueDate");
 const priority = document.querySelector("#priority");
-// const buttonArrow = document.querySelector(".button-arrow");
 const mainTaskContainer = document.querySelector(".main-task-container");
-// const dates = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy");
 
 const arrayTasks = [];
+
+mainTaskContainer.addEventListener("click", (e) => {
+
+    // console.log(e.target.dataset.id);
+    if (e.target.matches(".checkbox-button") ) {
+        
+        const svgContainer= document.querySelectorAll(".svg-container");
+        // checkboxButton.style.backgroundColor = "gray";
+
+        svgContainer.forEach((e) => e.classList.add("svg-style"));
+        // svgContainer.classList.add("svg-style");
+    }
+})
 
 form.addEventListener("submit", (e) => {
     
@@ -22,22 +32,9 @@ form.addEventListener("submit", (e) => {
 
 
     arrayTasks.forEach((e) => {
-        const task = taskGenerator(e.title, e.description, e.dueDate, e.priority);
-        mainTaskContainer.appendChild(task);
-
-        const checkboxButton = document.querySelector(".checkbox-button");
-    
-        checkboxButton.addEventListener("click", () => {
-        const svgContainer= document.querySelector(".svg-container");
-        checkboxButton.style.backgroundColor = "gray";
-        svgContainer.classList.add("svg-style");
-        });
+        const task = taskGenerator(e.title, e.description, e.dueDate, e.priority, e.id);
+            mainTaskContainer.appendChild(task);
     });
-    
-
 
     console.log(arrayTasks)
 });
-
-
-

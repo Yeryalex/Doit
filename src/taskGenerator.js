@@ -2,7 +2,7 @@ import checker from "./icons/check.svg"
 
 const checkerIcon = '<svg class="checker-icon"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.9,8.1L9,18L4.05,13.05L4.76,12.34L9,16.59L18.19,7.39L18.9,8.1Z" /></svg>'
 
-export function taskGenerator(title, description, dueDate, priority) {
+export function taskGenerator(title, description, dueDate, priority, id) {
 
     const generalTaskContainer = document.createElement("div");
     const svgContainer = document.createElement("div");
@@ -18,6 +18,7 @@ export function taskGenerator(title, description, dueDate, priority) {
     generalTaskContainer.classList.add("general-task-container");
     svgContainer.classList.add("svg-container");
     checkboxContainer.classList.add("checkbox-container");
+    checkboxContainer.dataset.id = id;
     buttonCheck.classList.add("checkbox-button");
     taskContainer.classList.add("task");
     tagSection.classList.add("tag-section");
