@@ -18,6 +18,6 @@ export class taskInfo {
     }
 
     revertCheck() {
-        this.isChecked = true;
+        this.isChecked = !this.isChecked;
     }
 }

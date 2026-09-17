@@ -13,28 +13,33 @@ const arrayTasks = [];
 
 mainTaskContainer.addEventListener("click", (e) => {
 
-    // console.log(e.target.dataset.id);
-    if (e.target.matches(".checkbox-button") ) {
-        
-        const svgContainer= document.querySelectorAll(".svg-container");
-        // checkboxButton.style.backgroundColor = "gray";
+    const checkButton = e.target.closest(".checkbox-button");
 
-        svgContainer.forEach((e) => e.classList.add("svg-style"));
-        // svgContainer.classList.add("svg-style");
-    }
+    if (!checkButton) return ;
+
+    checkButton.classList.toggle("svg-style");
 })
 
 form.addEventListener("submit", (e) => {
     
     e.preventDefault();
-    mainTaskContainer.textContent = "";
+
+    while (mainTaskContainer.firstChild) {
+        mainTaskContainer.removeChild(mainTaskContainer.firstChild);
+    }
+
     arrayTasks.push(new taskInfo(title.value, description.value, dueDate.value, priority.value));
 
+    displayTasks();
+
+});
+
+function displayTasks() {
 
     arrayTasks.forEach((e) => {
-        const task = taskGenerator(e.title, e.description, e.dueDate, e.priority, e.id);
+        const task = taskGenerator(e.title, e.description, e.dueDate, e.priority, e.id, e.isChecked);
             mainTaskContainer.appendChild(task);
     });
 
     console.log(arrayTasks)
-});
+}
