@@ -17,7 +17,7 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     checkboxContainer.classList.add("checkbox-container");
     buttonCheck.dataset.ids = id;
     buttonCheck.classList.add("checkbox-button");
-    isChecked ?  buttonCheck.classList.add("svg-style") : buttonCheck.classList.add("noChecked");
+    isChecked ?  buttonCheck.classList.toggle("svg-style") : buttonCheck.classList.toggle("noChecked");
     taskContainer.classList.add("task");
     tagSection.classList.add("tag-section");
     pdate.classList.add("pdate");

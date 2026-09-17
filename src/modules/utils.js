@@ -15,10 +15,9 @@ const taskToggle = (mainTaskContainer, arrayTasks) => {
                     el.revertCheck();
                 }
             });
-
-
-    
+            
         checkButton.classList.toggle("svg-style");
+        checkButton.classList.toggle("noChecked");
     })
     }
 
