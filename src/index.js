@@ -11,9 +11,6 @@ const mainTaskContainer = document.querySelector(".main-task-container");
 
 const arrayTasks = [];
 
-
-taskToggle(mainTaskContainer);
-
 form.addEventListener("submit", (e) => {
     
     e.preventDefault();
@@ -22,8 +19,10 @@ form.addEventListener("submit", (e) => {
         mainTaskContainer.removeChild(mainTaskContainer.firstChild);
     }
 
-    arrayTasks.push(new taskInfo(title.value, description.value, dueDate.value, priority.value));
+    arrayTasks.unshift(new taskInfo(title.value, description.value, dueDate.value, priority.value));
 
     displayTasks(arrayTasks, mainTaskContainer);
     form.reset();
 });
+
+taskToggle(mainTaskContainer, arrayTasks);

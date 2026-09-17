@@ -1,5 +1,5 @@
 
-export function taskGenerator(title, description, dueDate, priority) {
+export function taskGenerator(title, description, dueDate, priority, id, isChecked) {
 
     const generalTaskContainer = document.createElement("div");
     const svgContainer = document.createElement("div");
@@ -15,7 +15,9 @@ export function taskGenerator(title, description, dueDate, priority) {
     generalTaskContainer.classList.add("general-task-container");
     svgContainer.classList.add("svg-container");
     checkboxContainer.classList.add("checkbox-container");
+    buttonCheck.dataset.ids = id;
     buttonCheck.classList.add("checkbox-button");
+    isChecked ?  buttonCheck.classList.add("svg-style") : buttonCheck.classList.add("noChecked");
     taskContainer.classList.add("task");
     tagSection.classList.add("tag-section");
     pdate.classList.add("pdate");
