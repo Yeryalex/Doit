@@ -1,6 +1,5 @@
 import {format} from "date-fns";
 
-
 export class taskInfo {
  
     constructor(title, description, dueDate, priority) {
