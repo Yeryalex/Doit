@@ -11,6 +11,8 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     const ppriority = document.createElement("h6");
     const checkboxContainer = document.createElement("div");
     const buttonCheck = document.createElement("button");
+    const deleteButtonContainer = document.createElement("div");
+    const deleteButton = document.createElement("button");
 
     generalTaskContainer.classList.add("general-task-container");
     svgContainer.classList.add("svg-container");
@@ -18,10 +20,18 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     buttonCheck.dataset.ids = id;
     buttonCheck.classList.add("checkbox-button");
     isChecked ?  buttonCheck.classList.toggle("svg-style") : buttonCheck.classList.toggle("noChecked");
+    deleteButton.setAttribute("class", "button-selection");
+    deleteButtonContainer.setAttribute("class", "delete-button-container");
+
+    if (isChecked) {
+        deleteButton.classList.toggle("delete-button");
+        deleteButtonContainer.classList.toggle("style-button-container");
+    }
     taskContainer.classList.add("task");
     tagSection.classList.add("tag-section");
     pdate.classList.add("pdate");
     ppriority.classList.add("ppriority");
+    deleteButton.dataset.ids = id;
 
     ptitle.innerText = title;
     pdescription.innerText = description;
@@ -35,8 +45,10 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     tagSection.appendChild(pdate);
     tagSection.appendChild(ppriority);
     taskContainer.appendChild(tagSection);
+    deleteButtonContainer.appendChild(deleteButton)
 
     generalTaskContainer.appendChild(checkboxContainer);
     generalTaskContainer.appendChild(taskContainer);
+    generalTaskContainer.appendChild(deleteButtonContainer);
     return (generalTaskContainer);
 }

@@ -15,7 +15,7 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-  }s
+  }
   
   img, picture, video, canvas, svg {
     display: block;
@@ -71,17 +71,18 @@ main {
 .task {
   display: grid;
   color: white;
-  padding: 16px 16px;
+  padding: 16px 4px;
 }
 
 .general-task-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .checkbox-container {
-  padding: 20px 0 0 16px; 
+  padding: 24px 0 0 16px; 
 }
 
 .checkbox-button {
@@ -93,7 +94,7 @@ main {
   height: 16px;
   width: 16px;
   border-radius: 50%;
-
+  cursor: pointer;
 }
 
 .svg-style {
@@ -111,13 +112,9 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-}
-
-.scroll-section {
   height: 80vh;
   overflow: auto;
   scrollbar-width: none;
-
 }
 
 #arrow-up {
@@ -132,6 +129,7 @@ main {
   padding: 0;
   margin: 0;
   border: none;
+  cursor: pointer;
 }
 
 .title {
@@ -203,11 +201,30 @@ main {
   grid-template-columns: 70px 1fr;
 }
 
-
-
 .image-profile {
   width: 60px;
   height: 60px;
   border-radius: 100%;
   grid-area: 1 / 1 / 3 / 2;
+}
+
+.delete-button {
+  height: 18px;
+  width: 18px;
+  background-image: url(icons/alpha-x-circle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.style-button-container {
+  padding: 20px 16px 0 0;
+}
+
+.button-selection {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.01);
 }

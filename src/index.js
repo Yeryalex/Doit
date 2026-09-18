@@ -1,6 +1,6 @@
 import "./style.css"
 import { taskInfo } from "./modules/taskClass.js";
-import { taskToggle, displayTasks } from "./modules/utils.js";
+import { taskToggle, displayTasks, deleteButton, arrayTasks } from "./modules/utils.js";
 
 const form = document.querySelector("#task-form");
 const title = document.querySelector("#title");
@@ -9,7 +9,6 @@ const dueDate = document.querySelector("#dueDate");
 const priority = document.querySelector("#priority");
 const mainTaskContainer = document.querySelector(".main-task-container");
 
-const arrayTasks = [];
 
 form.addEventListener("submit", (e) => {
     
@@ -26,3 +25,4 @@ form.addEventListener("submit", (e) => {
 });
 
 taskToggle(mainTaskContainer, arrayTasks);
+deleteButton(mainTaskContainer, arrayTasks)
