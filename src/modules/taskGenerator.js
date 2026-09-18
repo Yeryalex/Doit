@@ -19,14 +19,16 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     checkboxContainer.classList.add("checkbox-container");
     buttonCheck.dataset.ids = id;
     buttonCheck.classList.add("checkbox-button");
-    isChecked ?  buttonCheck.classList.toggle("svg-style") : buttonCheck.classList.toggle("noChecked");
+    isChecked ?  svgContainer.classList.toggle("svg-style") : svgContainer.classList.toggle("noChecked");
     deleteButton.setAttribute("class", "button-selection");
     deleteButtonContainer.setAttribute("class", "delete-button-container");
 
     if (isChecked) {
+        
         deleteButton.classList.toggle("delete-button");
         deleteButtonContainer.classList.toggle("style-button-container");
     }
+
     taskContainer.classList.add("task");
     tagSection.classList.add("tag-section");
     pdate.classList.add("pdate");

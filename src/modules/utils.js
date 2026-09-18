@@ -6,7 +6,7 @@ const taskToggle = (mainTaskContainer, arrayTasks) => {
     
     mainTaskContainer.addEventListener("click", (e) => {
         
-        const checkButton = e.target.closest(".checkbox-button");
+        const checkButton = e.target.closest(".svg-container");
         if (!checkButton) return ;
         
         arrayTasks.forEach((el) => {
@@ -18,7 +18,7 @@ const taskToggle = (mainTaskContainer, arrayTasks) => {
             
         checkButton.classList.toggle("svg-style");
         checkButton.classList.toggle("noChecked");
-
+        
         const taskContainer = e.target.closest(".general-task-container");
         const deleteButton = taskContainer.querySelector(".button-selection");
         const deleteButtonContainer = taskContainer.querySelector(".delete-button-container")

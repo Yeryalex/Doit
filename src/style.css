@@ -86,19 +86,20 @@ main {
 }
 
 .checkbox-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
-  border: none;
-  height: 16px;
-  width: 16px;
   border-radius: 50%;
+  border: 1px solid rgb(75, 75, 75);
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.svg-container {
   cursor: pointer;
+  width: 16px;
+  height: 16px;
 }
 
 .svg-style {
-  background-color: lightslategray;
+  background-color: #0083ff;
   border-radius: 50%;
   height: 16px;
   width: 16px;
@@ -107,6 +108,14 @@ main {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.svg-style:active {
+  width: 16px;
+  height: 16px;
+  transition: width 1s, height 1s;
+
+}
+
 
 .main-task-container {
   display: flex;
