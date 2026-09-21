@@ -15,9 +15,9 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     const deleteButton = document.createElement("button");
 
     generalTaskContainer.classList.add("general-task-container");
+    generalTaskContainer.dataset.ids = id;
     svgContainer.classList.add("svg-container");
     checkboxContainer.classList.add("checkbox-container");
-    buttonCheck.dataset.ids = id;
     buttonCheck.classList.add("checkbox-button");
     isChecked ?  svgContainer.classList.toggle("svg-style") : svgContainer.classList.toggle("noChecked");
     deleteButton.setAttribute("class", "button-selection");
@@ -33,7 +33,6 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     tagSection.classList.add("tag-section");
     pdate.classList.add("pdate");
     ppriority.classList.add("ppriority");
-    deleteButton.dataset.ids = id;
 
     ptitle.innerText = title;
     pdescription.innerText = description;

@@ -14,10 +14,6 @@ form.addEventListener("submit", (e) => {
     
     e.preventDefault();
 
-    while (mainTaskContainer.firstChild) {
-        mainTaskContainer.removeChild(mainTaskContainer.firstChild);
-    }
-
     arrayTasks.unshift(new taskInfo(title.value, description.value, dueDate.value, priority.value));
 
     displayTasks(arrayTasks, mainTaskContainer);
@@ -25,4 +21,4 @@ form.addEventListener("submit", (e) => {
 });
 
 taskToggle(mainTaskContainer, arrayTasks);
-deleteButton(mainTaskContainer, arrayTasks)
+deleteButton(mainTaskContainer, arrayTasks);
