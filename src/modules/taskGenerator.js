@@ -37,6 +37,8 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     tagSection.classList.add("tag-section");
     pdate.classList.add("pdate");
     ppriority.classList.add("ppriority");
+    ptitle.classList.add("title-task")
+    pdescription.classList.add("description-task")
 
     ptitle.innerText = title;
     pdescription.innerText = description;
