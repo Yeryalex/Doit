@@ -86,36 +86,33 @@ main {
 }
 
 .checkbox-button {
+  width: 16px;
+  height: 16px;
   padding: 0;
   border-radius: 50%;
   border: 1px solid rgb(75, 75, 75);
   background-color: rgba(0, 0, 0, 0.01);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .svg-container {
   cursor: pointer;
   width: 16px;
   height: 16px;
+  scale: 0;
 }
 
 .svg-style {
   background-color: #0083ff;
   border-radius: 50%;
-  height: 16px;
-  width: 16px;
   background-image: url(icons/check.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: auto;
+  transition: all 0.3s ease;
 }
-
-.svg-style:active {
-  width: 16px;
-  height: 16px;
-  transition: width 1s, height 1s;
-
-}
-
 
 .main-task-container {
   display: flex;
@@ -237,3 +234,5 @@ main {
   border: none;
   background-color: rgba(0, 0, 0, 0.01);
 }
+
+

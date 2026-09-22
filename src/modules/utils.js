@@ -6,20 +6,30 @@ const taskToggle = (mainTaskContainer, arrayTasks) => {
     
     mainTaskContainer.addEventListener("click", (e) => {
         
-        const checkButton = e.target.closest(".svg-container");
+        const checkButton = e.target.closest(".checkbox-button");
         if (!checkButton) return ;
         
+        const svgContainer = checkButton.querySelector(".svg-container");
         const taskContainer = e.target.closest(".general-task-container");
         
         arrayTasks.forEach((task) => {
             
             if (task.id === taskContainer.dataset.ids) {
                 task.revertCheck();
+                if (task.isChecked){
+                    svgContainer.classList.toggle("svg-style");
+                    svgContainer.style.scale = "1";
+                    checkButton.style.border = "none";
+                }
+                else {
+                    svgContainer.classList.toggle("svg-style");
+                    svgContainer.style.scale = "0";
+                    checkButton.style.border = "1px solid rgb(75, 75, 75)";
+                }
             }
         });
             
-        checkButton.classList.toggle("svg-style");
-        checkButton.classList.toggle("noChecked");
+
         
         const deleteButton = taskContainer.querySelector(".button-selection");
         const deleteButtonContainer = taskContainer.querySelector(".delete-button-container")

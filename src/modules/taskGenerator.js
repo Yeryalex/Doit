@@ -19,14 +19,18 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     svgContainer.classList.add("svg-container");
     checkboxContainer.classList.add("checkbox-container");
     buttonCheck.classList.add("checkbox-button");
-    isChecked ?  svgContainer.classList.toggle("svg-style") : svgContainer.classList.toggle("noChecked");
     deleteButton.setAttribute("class", "button-selection");
     deleteButtonContainer.setAttribute("class", "delete-button-container");
 
     if (isChecked) {
-        
+
+        buttonCheck.style.border = "none";
+        svgContainer.classList.toggle("svg-style");
+        svgContainer.style.scale = "1";
         deleteButton.classList.toggle("delete-button");
         deleteButtonContainer.classList.toggle("style-button-container");
+    }
+    if (!isChecked) {
     }
 
     taskContainer.classList.add("task");
@@ -51,5 +55,6 @@ export function taskGenerator(title, description, dueDate, priority, id, isCheck
     generalTaskContainer.appendChild(checkboxContainer);
     generalTaskContainer.appendChild(taskContainer);
     generalTaskContainer.appendChild(deleteButtonContainer);
+
     return (generalTaskContainer);
 }
