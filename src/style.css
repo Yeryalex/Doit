@@ -56,7 +56,8 @@ main {
   position: relative;
   display: grid;
   grid-template-rows: 1fr 130px;
-  background-color: rgb(75, 75, 75);
+  background-color: #252525;
+  /* background-color: rgb(75, 75, 75); */
 }
 
 #task-form {
@@ -123,7 +124,7 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  height: calc(100vh - 170px);
+  height: calc(100vh - 130px);
   overflow: auto;
   scrollbar-width: none;
   z-index: 1;
@@ -136,7 +137,7 @@ main {
   width: 350px;
   border-radius: 50%;
   background-color: #0083ff;
-  box-shadow: -2px -2px 10px #0053a1ab;
+  box-shadow: 8px -5px 10px #0053a1ab;
 }
 
 .ball-1 {
