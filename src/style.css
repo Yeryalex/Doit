@@ -46,8 +46,8 @@ main {
   display: grid;
   grid-template-columns: 200px 1fr;
   height: 100vh;
+  overflow: hidden;
 }
-
 
 .main-container {
   position: relative;
@@ -62,7 +62,7 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 60px);
   overflow: auto;
   scrollbar-width: none;
   z-index: 1;
@@ -116,6 +116,7 @@ main {
   background-color: rgb(10, 10, 10);
   outline: none;
   border: none;
+  padding-left: 8px;
 }
 
 .project-icon {
@@ -148,7 +149,7 @@ main {
   grid-template-columns: 50px 1fr 50px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 60px;
+  min-height: 60px;
 }
 
 .checkbox-container {
@@ -226,21 +227,65 @@ main {
 
 .sidebar {
   display: grid;
-  grid-template-rows: 60px 30px 1fr;
+  grid-template-rows: 60px 30px 30px 1fr;
   background-color: rgb(10, 10, 10);
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
+  row-gap: 20px;
 }
-
 
 .profile-box {
   display: grid;
   grid-template-columns: 70px 1fr;
+  grid-template-rows: 35px 35px;
+  column-gap: 10px;
 }
 
-.image-profile {
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
+.profile-image {
+  background-image: url(/src/icons/simon-twukN12EN7c-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
   grid-area: 1 / 1 / 3 / 2;
+}
+
+.name {
+  grid-area: 1 / 2 / 2 / 3;
+  align-self: flex-end;
+}
+
+.user-name {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.all-mytasks-section {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  align-items: center;
+}
+
+.mytask-icon {
+  height: 20px;
+  width: 20px;
+  background-image: url(/src/icons/assignment_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.number-tasks {
+  height: 20px;
+  width: 20px;
+  background-color: #0083ff;
+  border-radius: 50%;
+}
+
+.list-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projects-name {
 }

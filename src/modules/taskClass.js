@@ -1,9 +1,12 @@
 import {format} from "date-fns";
 
-export class taskInfo {
- 
-    constructor(title, description, dueDate, priority) {
 
+
+class taskInfo {
+ 
+    constructor(projectName, title, description, dueDate, priority) {
+        
+        this.projectName = projectName;
         this.title = title;
         this.description = description;
         // this.dueDate = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy");
@@ -12,6 +15,7 @@ export class taskInfo {
         this.id = self.crypto.randomUUID();
         this.isChecked = false;
     }
+    
 
     getTitle() {
         return(this.title)
@@ -21,3 +25,5 @@ export class taskInfo {
         this.isChecked = !this.isChecked;
     }
 }
+
+export { taskInfo }
