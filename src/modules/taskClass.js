@@ -6,7 +6,8 @@ export class taskInfo {
 
         this.title = title;
         this.description = description;
-        this.dueDate = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy");;
+        // this.dueDate = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy");
+        this.dueDate = dueDate;
         this.priority = priority;
         this.id = self.crypto.randomUUID();
         this.isChecked = false;

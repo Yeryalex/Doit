@@ -14,8 +14,7 @@ form.addEventListener("submit", (e) => {
     
     e.preventDefault();
 
-    arrayTasks.unshift(new taskInfo(title.value, description.value, dueDate.value, priority.value));
-
+    arrayTasks.unshift(new taskInfo(title.value, null, null, null));
     displayTasks(arrayTasks, mainTaskContainer);
     form.reset();
 });

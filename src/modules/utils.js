@@ -46,10 +46,9 @@ const displayTasks = (arrayTasks, mainTaskContainer) => {
     }
 
     arrayTasks.forEach((e) => {
-        const task = taskGenerator(e.title, e.description, e.dueDate, e.priority, e.id, e.isChecked);
+        const task = taskGenerator(e.title, e.id, e.isChecked);
         mainTaskContainer.appendChild(task);
     });
-    // console.log(arrayTasks)
 }
 
 const deleteButton = (mainTaskContainer, arrayTasks) => {

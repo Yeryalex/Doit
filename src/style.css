@@ -38,6 +38,12 @@
     text-wrap: balance;
 }
 
+/* ///////////////////////////////////////////////////////////// */
+
+
+
+/* ////////////////GENERAL SECTIONS//////////////////////////////// */
+
 main {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -55,20 +61,22 @@ main {
 .main-container {
   position: relative;
   display: grid;
-  grid-template-rows: 1fr 130px;
+  grid-template-rows: 1fr 60px;
   background-color: #252525;
-  /* background-color: rgb(75, 75, 75); */
 }
+
+/* ////////////////////FORM SECTION/////////////////////////////////// */
+
 
 #task-form {
   position: relative;
   margin: 0 40px 10px 40px;
   display: grid;
-  grid-template-columns: 100px 100px 1fr 30px;
+  grid-template-columns: 25px 1fr 30px;
   border: 1px solid gray;
   background-color: rgb(10, 10, 10);
   border-radius: 10px;
-  padding: 5px 2px 2px 20px;
+  padding: 8px;
 }
 
 .task {
@@ -76,6 +84,8 @@ main {
   color: white;
   padding: 16px 4px;
 }
+
+/* /////////////////////////////////////////////////////////////////////// */
 
 .general-task-container {
   display: grid;
@@ -157,12 +167,19 @@ main {
   top: 300px;
 }
 
+.project-icon {
+  background-image: url(/src/icons/list_2_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 #arrow-up {
   fill: gray;
 }
 
 .button-arrow {
-  grid-column: 4 / 5;
+  grid-column: 3 / 4;
   height: 30px;
   width: 30px;
   background-color: black;
@@ -170,9 +187,10 @@ main {
   margin: 0;
   border: none;
   cursor: pointer;
+  align-self: center;
 }
 
-.title {
+/* .title {
   grid-column: 1 / 5;
 }
 
@@ -197,9 +215,23 @@ main {
   align-items: center;
   gap: 6px;
   align-self: self-start;
+} */
+
+/* #title, #description {
+  color: white;
+  width: 100%;
+  background-color: rgb(10, 10, 10);
+  outline: none;
+  border: none;
+} */
+
+.title {
+  align-self: center;
+  padding-left: 5px;
 }
 
-#title, #description {
+#title {
+  font-size: larger;
   color: white;
   width: 100%;
   background-color: rgb(10, 10, 10);
@@ -207,23 +239,19 @@ main {
   border: none;
 }
 
-#title {
-  font-size: larger;
-}
-
 .title-task {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+/* 
 #dueDate, #priority {
   border-radius: 10px;
   border: none;
   outline: none;
   height: 30px;
   padding: 5px;
-}
+} */
 
 .tag-section {
   margin-top: 8px;
