@@ -5,7 +5,7 @@ export function taskGenerator(title, id, isChecked) {
     const generalTaskContainer = document.createElement("div");
     const svgContainer = document.createElement("div");
     const taskContainer = document.createElement("div");
-    const tagSection = document.createElement("div");
+    // const tagSection = document.createElement("div");
     const ptitle = document.createElement("h3");
     // const pdescription = document.createElement("h5");
     // const pdate = document.createElement("h6");
@@ -35,7 +35,7 @@ export function taskGenerator(title, id, isChecked) {
     }
 
     taskContainer.classList.add("task");
-    tagSection.classList.add("tag-section");
+    // tagSection.classList.add("tag-section");
     // pdate.classList.add("pdate");
     // ppriority.classList.add("ppriority");
     ptitle.classList.add("title-task")
@@ -52,7 +52,7 @@ export function taskGenerator(title, id, isChecked) {
     // taskContainer.appendChild(pdescription);
     // tagSection.appendChild(pdate);
     // tagSection.appendChild(ppriority);
-    taskContainer.appendChild(tagSection);
+    // taskContainer.appendChild(tagSection);
     deleteButtonContainer.appendChild(deleteButton)
 
     generalTaskContainer.appendChild(checkboxContainer);
