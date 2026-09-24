@@ -21,23 +21,19 @@
             
             <div class="list-section">                
                 <p>My lists</p>
-                <button type="button" class="addListButton">+</button>
-
+                <button type="button" id="add-list">+</button>
+                <dialog closedby="any" id="dialog-add-list">
+                    <button id="close-dialog">close</button>
+                    <form action="#" id="modal-form">
+                        <input id="input-modal" type="text" placeholder="Add a new list">
+                        <button type="submit" id="modal-form-button">Continue</button>
+                    </form>
+                </dialog>
             </div>
 
 
-            <div class="projects-name">
-                <p>Personal</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
-                <p>My project 1</p>
+            <div class="list-names-container">
+                <button>Personal</button>
             </div>
    
 

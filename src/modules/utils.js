@@ -1,6 +1,5 @@
 import { taskGenerator } from "./taskGenerator.js";
-
-const arrayTasks = [];
+import { arrayTasks } from "../index.js";
 
 const taskToggle = (mainTaskContainer, arrayTasks) => {
     
