@@ -24,6 +24,7 @@ function handleFormList() {
     // console.log(e.target);
         
         const listName = inputModal.value;
+        inputNewList.push(listName);
         const listElement = document.createElement("button");
 
         listElement.innerText = listName;

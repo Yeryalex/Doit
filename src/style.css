@@ -323,11 +323,17 @@ main {
 /* //////////////////////MODAL LIST ICON/////////////////////////////// */
 
 .modal-container {
+  display: none;
   border-radius: 10px;
   background-color: rgba(10, 10, 10);
   width: 300px;
   height: 300px;
-  position: fixed;
+  position: absolute;
   bottom: 70px;
-  left: 240px;
+  left: 0;
+  z-index: 1;
+}
+
+.list-section-unit {
+  cursor: pointer;
 }
