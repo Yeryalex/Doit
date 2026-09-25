@@ -1,4 +1,5 @@
 import { arrayTasks } from "../index.js";
+import { inputNewList } from "./modalFormList.js";
 import { taskInfo } from "./taskClass.js";
 import { displayTasks } from "./utils.js";
 
@@ -14,7 +15,7 @@ function taskSubmission() {
     form.addEventListener("submit", (e) => {
         
         e.preventDefault();
-        arrayTasks.unshift(new taskInfo("Personal", title.value, null, null, null));
+        arrayTasks.unshift(new taskInfo(inputNewList[0], title.value, null, null, null));
         displayTasks(arrayTasks, mainTaskContainer);
         console.log(arrayTasks)
         form.reset();

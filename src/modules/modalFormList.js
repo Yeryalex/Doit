@@ -5,6 +5,7 @@ const closeProjectDialog = document.querySelector("#close-dialog");
 const modalForm = document.querySelector("#modal-form");
 const inputModal = document.querySelector("#input-modal");
 
+const inputNewList = ["Personal"];
 
 function handleFormList() {
     
@@ -33,4 +34,4 @@ function handleFormList() {
     });
 }
 
-export { handleFormList }
+export { handleFormList , inputNewList}

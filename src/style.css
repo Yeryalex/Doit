@@ -119,11 +119,12 @@ main {
   padding-left: 8px;
 }
 
-.project-icon {
+.modal-showlist-icon {
   background-image: url(/src/icons/list_2_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  cursor: pointer;
 }
 
 #arrow-up {
@@ -316,4 +317,17 @@ main {
 ::backdrop {
   background-color: black;
   opacity: 0.5;
+}
+
+
+/* //////////////////////MODAL LIST ICON/////////////////////////////// */
+
+.modal-container {
+  border-radius: 10px;
+  background-color: rgba(10, 10, 10);
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  bottom: 70px;
+  left: 240px;
 }

@@ -1,7 +1,0 @@
-// function projectListGenerator() {
-    
-// }
-
-
-
-// export { projectListGenerator,}
