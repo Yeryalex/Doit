@@ -5,7 +5,7 @@ const closeProjectDialog = document.querySelector("#close-dialog");
 const modalForm = document.querySelector("#modal-form");
 const inputModal = document.querySelector("#input-modal");
 
-const inputNewList = ["Personal"];
+const inputNewList = [{list : "Personal", checked : true}];
 
 function handleFormList() {
     
@@ -24,7 +24,7 @@ function handleFormList() {
     // console.log(e.target);
         
         const listName = inputModal.value;
-        inputNewList.push(listName);
+        inputNewList.push({list : listName, checked : false});
         const listElement = document.createElement("button");
 
         listElement.innerText = listName;

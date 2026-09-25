@@ -16,7 +16,7 @@ function showListModal() {
  
             const list = document.createElement("button");
             list.setAttribute("class", "list-section-unit");
-            list.innerText = listName;
+            list.innerText = listName.list;
             modalContainer.appendChild(list);
             modalContainer.style.display = "block";
 
@@ -25,4 +25,8 @@ function showListModal() {
     
 }
 
-export { showListModal }
+
+
+
+
+export { showListModal  }
