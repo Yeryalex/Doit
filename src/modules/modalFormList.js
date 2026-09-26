@@ -19,9 +19,8 @@ function handleFormList() {
     })
     
     modalForm.addEventListener("submit", (e) => {
+        
         e.preventDefault();
-    // console.log(inputModal.value)
-    // console.log(e.target);
         
         const listName = inputModal.value;
         inputNewList.push({list : listName, checked : false});

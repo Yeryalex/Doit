@@ -2,7 +2,6 @@ import { arrayTasks } from "../index.js";
 import { inputNewList } from "./modalFormList.js";
 import { taskInfo } from "./taskClass.js";
 import { displayTasks } from "./utils.js";
-// import { getListName } from "./showModalList.js";
 
 const form = document.querySelector("#task-form");
 const title = document.querySelector("#title");
@@ -17,12 +16,8 @@ function activeList(listButtonSelected) {
     const activeList = inputNewList.find((e) => e.list === listButtonSelected.innerText);
     
     inputNewList.forEach((e) => {
-        if (e.list === activeList.list) {
-            e.checked = true;
-        }
-        else {
-            e.checked = false
-        }
+
+        (e.list === activeList.list) ? e.checked = true: e.checked = false;
     })
 }
 
@@ -35,25 +30,21 @@ function getListName() {
        const listButtonSelected = e.target.closest(".list-section-unit");
        
        if (!listButtonSelected) return ;
-        activeList(listButtonSelected);
-
-        // return(inputNewList.find((e) => e.checked === true).list);
-
+       activeList(listButtonSelected);
+       modalContainer.style.display = "none";
     })
 }
 
-
-getListName();
-// let listNameSelected = getListName();
-// console.log(listNameSelected)
-
 function taskSubmission() {
     
+    getListName();
+   
     form.addEventListener("submit", (e) => {
         
         e.preventDefault();
 
-        arrayTasks.unshift(new taskInfo("person al", title.value, null, null, null));
+        let listSelected = inputNewList.find((e) => e.checked === true).list;
+        arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, null));
         displayTasks(arrayTasks, mainTaskContainer);
         console.log(arrayTasks)
         form.reset();

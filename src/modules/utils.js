@@ -27,8 +27,6 @@ const taskToggle = (mainTaskContainer, arrayTasks) => {
                 }
             }
         });
-            
-
         
         const deleteButton = taskContainer.querySelector(".button-selection");
         const deleteButtonContainer = taskContainer.querySelector(".delete-button-container")

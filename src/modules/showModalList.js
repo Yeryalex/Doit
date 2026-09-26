@@ -1,5 +1,4 @@
 import { inputNewList } from "./modalFormList.js";
-// import { mainTaskContainer } from "./taskSubmission.js";
 
 const iconList = document.querySelector(".modal-showlist-icon");
 
@@ -24,9 +23,5 @@ function showListModal() {
     });
     
 }
-
-
-
-
 
 export { showListModal  }

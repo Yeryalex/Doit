@@ -6,8 +6,8 @@ import { showListModal } from "./modules/showModalList.js";
 
 const arrayTasks = [];
 
-showListModal();
 
+showListModal();
 taskSubmission();
 taskToggle(mainTaskContainer, arrayTasks);
 deleteButton(mainTaskContainer, arrayTasks);
