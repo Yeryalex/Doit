@@ -9,7 +9,8 @@ const description = document.querySelector("#description");
 const dueDate = document.querySelector("#dueDate");
 const priority = document.querySelector("#priority");
 const mainTaskContainer = document.querySelector(".main-task-container");
-
+const modalContainer = document.querySelector(".modal-container");
+const mainContainer = document.querySelector(".main-container");
         
 function activeList(listButtonSelected) {
 
@@ -23,15 +24,23 @@ function activeList(listButtonSelected) {
 
 function getListName() {
 
-    const modalContainer = document.querySelector(".modal-container");
+
+    mainTaskContainer.addEventListener("click", (e) => {
+
+        const boundary = e.target.closest(".modal-container");
+
+        if (!boundary) modalContainer.style.display = "none";
+
+    })
 
     modalContainer.addEventListener("click" , (e) => {
+        
+        const listButtonSelected = e.target.closest(".list-section-unit");
 
-       const listButtonSelected = e.target.closest(".list-section-unit");
-       
-       if (!listButtonSelected) return ;
-       activeList(listButtonSelected);
-       modalContainer.style.display = "none";
+        if (!listButtonSelected) return ;
+        
+        activeList(listButtonSelected);
+        modalContainer.style.display = "none";
     })
 }
 

@@ -231,7 +231,7 @@ main {
   grid-template-rows: 60px 30px 30px 1fr;
   background-color: rgb(10, 10, 10);
   color: white;
-  padding: 10px 20px;
+  padding: 10px 0px;
   row-gap: 20px;
 }
 
@@ -240,6 +240,7 @@ main {
   grid-template-columns: 70px 1fr;
   grid-template-rows: 35px 35px;
   column-gap: 10px;
+  padding: 0 20px;
 }
 
 .profile-image {
@@ -264,6 +265,7 @@ main {
   display: grid;
   grid-template-columns: 30px 1fr 30px;
   align-items: center;
+  padding: 0 20px;
 }
 
 .mytask-icon {
@@ -286,11 +288,8 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
-
-.projects-name {
-}
-
 
 /* ///////////////////////////MODAl ADD PROJECTS///////////////////// */
 
@@ -334,6 +333,50 @@ main {
   z-index: 1;
 }
 
+.modal-contain-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
 .list-section-unit {
+  padding: 0 20px;
+  text-align: start;
+  height: 40px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
   cursor: pointer;
+}
+
+.list-section-unit:first-child:hover {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #646363;
+}
+
+.list-section-unit:hover {
+    background-color: #646363;
+}
+
+/* /////////////////////////////LIST IN THE SIDEBAR/////////////////// */
+
+.sidebar-list-button {
+  padding: 0 20px;
+  text-align: start;
+  height: 40px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
+}
+
+.sidebar-list-button:hover {
+  background-color: #646363;
+}
+
+.list-names-container {
+  
+  display: flex;
+  flex-direction: column;
 }

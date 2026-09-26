@@ -7,8 +7,10 @@ function showListModal() {
     iconList.addEventListener("click", () => {
 
         const modalContainer = document.querySelector(".modal-container");
-        while (modalContainer.firstChild) {
-            modalContainer.removeChild(modalContainer.firstChild);
+        const modalContainButtons = document.querySelector(".modal-contain-buttons");
+       
+        while (modalContainButtons.firstChild) {
+            modalContainButtons.removeChild(modalContainButtons.firstChild);
         }
 
         inputNewList.forEach((listName) => {
@@ -16,9 +18,8 @@ function showListModal() {
             const list = document.createElement("button");
             list.setAttribute("class", "list-section-unit");
             list.innerText = listName.list;
-            modalContainer.appendChild(list);
+            modalContainButtons.appendChild(list);
             modalContainer.style.display = "block";
-
         })
     });
     

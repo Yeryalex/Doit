@@ -26,6 +26,7 @@ function handleFormList() {
         inputNewList.push({list : listName, checked : false});
         const listElement = document.createElement("button");
 
+        listElement.setAttribute("class", "sidebar-list-button");
         listElement.innerText = listName;
         listNamesContainer.appendChild(listElement);
 
