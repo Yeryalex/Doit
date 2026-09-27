@@ -343,7 +343,7 @@ main {
   text-align: start;
   height: 40px;
   border: none;
-  outline: none;
+  /* outline: none; */
   color: white;
   background-color: transparent;
   cursor: pointer;
@@ -366,7 +366,7 @@ main {
   text-align: start;
   height: 40px;
   border: none;
-  outline: none;
+  /* outline: none; */
   color: white;
   background-color: transparent;
 }

@@ -40,6 +40,7 @@
    
 
         </div>
+         
         <div class="main-container">
             
             <div class="decoration-ball ball-1"></div>
@@ -51,8 +52,14 @@
             
             <form action="#" id="task-form">
 
-                <div class="modal-showlist-icon"></div>
-
+                <div role="button" tabindex="0" class="modal-showlist-icon">
+                    <div class="modal-container">
+                        <div class="modal-contain-buttons">
+                            <button class="list-section-unit">Personal</button>
+                        </div>
+                    </div> 
+                </div>
+ 
                 <p class="title">
                       <label for="title"></label>
                     <input type="text" id="title" placeholder="Add task" maxlength="80" required>
@@ -85,11 +92,6 @@
                 </div>
             </form>
         </div>
-        <div class="modal-container">
-                <div class="modal-contain-buttons">
-                    <button class="list-section-unit">Personal</button>
-                </div>
-            </div>
     </main>
 
 </body>
