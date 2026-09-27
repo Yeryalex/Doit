@@ -2,8 +2,7 @@ const listNamesContainer = document.querySelector(".list-names-container");
 const addListButton = document.querySelector("#add-list");
 const addProjectModal = document.querySelector("#dialog-add-list");
 const closeProjectDialog = document.querySelector("#close-dialog");
-const modalForm = document.querySelector("#modal-form");
-const inputModal = document.querySelector("#input-modal");
+const modalForm = document.querySelector('[name="registerlist"]');
 
 const inputNewList = [{list : "Personal", checked : true}];
 
@@ -22,11 +21,11 @@ function handleFormList() {
         
         e.preventDefault();
         
-        const listName = inputModal.value;
+        const listName = e.currentTarget.inputlist.value;
         inputNewList.push({list : listName, checked : false});
         const listElement = document.createElement("button");
 
-        listElement.setAttribute("class", "sidebar-list-button");
+        listElement.classList.add("sidebar-list-button");
         listElement.innerText = listName;
         listNamesContainer.appendChild(listElement);
 
