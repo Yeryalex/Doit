@@ -24,30 +24,32 @@ function activeList(listButtonSelected) {
 
 function getListName() {
 
-
-    mainTaskContainer.addEventListener("click", (e) => {
-
-        const boundary = e.target.closest(".modal-container");
-
-        if (!boundary) modalContainer.style.display = "none";
-
-    })
-
     modalContainer.addEventListener("click" , (e) => {
         
+        modalContainer.style.display = "block";
         const listButtonSelected = e.target.closest(".list-section-unit");
-
         if (!listButtonSelected) return ;
-        
-        activeList(listButtonSelected);
-        modalContainer.style.display = "none";
+
+            activeList(listButtonSelected);
+            modalContainer.style.display = "none";
     })
 }
+
 
 function taskSubmission() {
     
     getListName();
-   
+
+   document.body.addEventListener("click", (e) => {
+
+    const clickModal = e.target.closest(".modal-container");
+    const iconModal = e.target.closest(".modal-showlist-icon");
+
+    if (iconModal || clickModal) return ;
+    modalContainer.style.display = "none";
+
+   })
+
     form.addEventListener("submit", (e) => {
         
         e.preventDefault();
