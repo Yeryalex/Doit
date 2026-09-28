@@ -15,6 +15,7 @@
   }
   
   body {
+    font-family: sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
@@ -307,6 +308,8 @@ main {
 }
 
 .list-section div > svg {
+    outline: none;
+
   width: 25px;
   fill: #c7c3c3;
   transition: fill 0.3s ease;
@@ -446,4 +449,69 @@ main {
   
   display: flex;
   flex-direction: column;
+}
+
+/* ////////////////DIALOG/////////////////////////// */
+
+#dialog-add-list {
+  padding: 20px 40px;
+  width: 600px;
+  height: 230px;
+  background-color: #252525;
+  border-radius: 10px;
+  border: none;
+}
+
+#close-dialog {
+    /* height: 20px;
+  width: 20px; */
+  padding: 0;
+  /* color: red; */
+  /* background-color: red; */
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+#close-dialog > svg {
+  height: 20px;
+  width: 20px;
+  /* background-color: transparent; */
+}
+
+#modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 150px;
+}
+
+#modal-form > input {
+  height: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  caret-color: #0083ff;
+  font-size: xx-large;
+  color: white;
+}
+
+#modal-form > button {
+  height: 40px;
+  color: white;
+  /* outline: 1px solid #939698; */
+  border: none;
+  border-radius: 20px;
+  background-color: #0083ff;
+  align-self: end;
+  width: 150px;
+  font-size: larger;
+}
+
+#modal-form > button:hover {
+
+  background-color: #2093ff;
+
 }
