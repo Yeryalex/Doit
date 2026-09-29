@@ -1,6 +1,9 @@
 import { taskGenerator } from "./taskGenerator.js";
 import { arrayTasks } from "../index.js";
 import { assignNumberTasks } from "./listCounter.js";
+import { inputNewList } from "./modalFormList.js";
+import { listCounter } from "./listCounter.js";
+
 
 const taskToggle = (mainTaskContainer, arrayTasks) => {
     
@@ -44,7 +47,7 @@ const displayTasks = (arrayTasks, mainTaskContainer) => {
     }
 
     arrayTasks.forEach((e) => {
-        const task = taskGenerator(e.title, e.id, e.isChecked);
+        const task = taskGenerator(e.projectName , e.title, e.id, e.isChecked);
         mainTaskContainer.appendChild(task);
     });
 }
@@ -67,7 +70,13 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
                 displayTasks(arrayTasks, mainTaskContainer);
             }
         });
+        const allLists = document.querySelectorAll(".list-counter-container");
+
+        let listSelected = taskContainer.attributes[1].nodeValue;
+
         assignNumberTasks(numberTasks, arrayTasks.length, 0);
+        listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
+
     })
 
 }
