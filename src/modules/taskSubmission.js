@@ -29,7 +29,7 @@ function getListName() {
     modalContainer.addEventListener("click" , (e) => {
         
         modalContainer.style.display = "block";
-        const listButtonSelected = e.target.closest(".list-section-unit");
+        const listButtonSelected = e.target.closest(".container-section-unit");
         if (!listButtonSelected) return ;
 
             activeList(listButtonSelected);
@@ -41,7 +41,7 @@ function getListName() {
 function taskSubmission() {
     
     getListName();
-   document.body.addEventListener("click", (e) => {
+    document.body.addEventListener("click", (e) => {
 
     const clickModal = e.target.closest(".modal-container");
     const iconModal = e.target.closest(".modal-showlist-icon");
