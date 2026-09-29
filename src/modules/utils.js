@@ -1,5 +1,6 @@
 import { taskGenerator } from "./taskGenerator.js";
 import { arrayTasks } from "../index.js";
+import { assignNumberTasks } from "./listCounter.js";
 
 const taskToggle = (mainTaskContainer, arrayTasks) => {
     
@@ -56,6 +57,7 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
         if (!deleteButton) return  ;
         
         const taskContainer = e.target.closest(".general-task-container");
+        const numberTasks = document.querySelector(".number-tasks");        
 
         arrayTasks.forEach((element, index) => {
             
@@ -65,7 +67,7 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
                 displayTasks(arrayTasks, mainTaskContainer);
             }
         });
-
+        assignNumberTasks(numberTasks, arrayTasks.length, 0);
     })
 
 }

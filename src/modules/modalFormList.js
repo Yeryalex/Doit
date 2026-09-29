@@ -23,11 +23,21 @@ function handleFormList() {
         
         const listName = e.currentTarget.inputlist.value;
         inputNewList.push({list : listName, checked : false});
+        
+        const container = document.createElement("div");
         const listElement = document.createElement("button");
+        const counter = document.createElement("div");
 
+        container.classList.add("list-counter-container");
         listElement.classList.add("sidebar-list-button");
+        counter.classList.add("number-tasks-list");
+
+        counter.textContent = "0";
         listElement.innerText = listName;
-        listNamesContainer.appendChild(listElement);
+
+        container.appendChild(listElement);
+        container.appendChild(counter);
+        listNamesContainer.appendChild(container);
 
         modalForm.reset();
         addProjectModal.close();

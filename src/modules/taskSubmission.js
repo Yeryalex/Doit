@@ -2,6 +2,7 @@ import { arrayTasks } from "../index.js";
 import { inputNewList } from "./modalFormList.js";
 import { taskInfo } from "./taskClass.js";
 import { displayTasks } from "./utils.js";
+import { assignNumberTasks, listCounter} from "./listCounter.js";
 
 const form = document.querySelector("#task-form");
 const title = document.querySelector("#title");
@@ -11,7 +12,8 @@ const priority = document.querySelector("#priority");
 const mainTaskContainer = document.querySelector(".main-task-container");
 const modalContainer = document.querySelector(".modal-container");
 const mainContainer = document.querySelector(".main-container");
-        
+const numberTasks = document.querySelector(".number-tasks");        
+
 function activeList(listButtonSelected) {
 
     const activeList = inputNewList.find((e) => e.list === listButtonSelected.innerText);
@@ -39,7 +41,6 @@ function getListName() {
 function taskSubmission() {
     
     getListName();
-
    document.body.addEventListener("click", (e) => {
 
     const clickModal = e.target.closest(".modal-container");
@@ -53,10 +54,18 @@ function taskSubmission() {
     form.addEventListener("submit", (e) => {
         
         e.preventDefault();
+        
+        const allLists = document.querySelectorAll(".list-counter-container");
+
+        assignNumberTasks(numberTasks, arrayTasks.length, 1);
 
         let listSelected = inputNewList.find((e) => e.checked === true).list;
         arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, null));
+        
+        
         displayTasks(arrayTasks, mainTaskContainer);
+        listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
+         
         console.log(arrayTasks)
         form.reset();
     });

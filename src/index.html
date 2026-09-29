@@ -16,14 +16,14 @@
             <div class="all-mytasks-section">
                 <div class="mytask-icon"></div>
                 <p>All my tasks</p>
-                <div class="number-tasks"></div>
+                <div class="number-tasks">0</div>
             </div>
             
             <div class="list-section">                
                 <p>My lists</p>
 
-                <div id="add-list">
-                    <svg tabindex="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>                
+                <div role="button" tabindex="0" id="add-list">
+                    <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>                
                 </div>
                 
                 <dialog closedby="any" id="dialog-add-list">
@@ -31,7 +31,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" style="fill: lightgray; background-color: rgba(0, 0, 0, 0.01);" viewBox="0 0 24 24"><path d="M9,7L11,12L9,17H11L12,14.5L13,17H15L13,12L15,7H13L12,9.5L11,7H9M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z" /></svg>
                     </div>
                     <form action="#" id="modal-form" name="registerlist">
-                        <input id="input-modal" type="text" name="inputlist" placeholder="Add a list title">
+                        <input id="input-modal" type="text" name="inputlist" required placeholder="Add a list title">
                         <button type="submit" id="modal-form-button">Continue</button>
                     </form>
                 </dialog>
@@ -40,7 +40,10 @@
 
 
             <div class="list-names-container">
-                <button class="sidebar-list-button">Personal</button>
+                <div class="list-counter-container">
+                    <button class="sidebar-list-button">Personal</button>
+                    <div class="number-tasks-list">0</div>
+                </div>
             </div>
    
 
