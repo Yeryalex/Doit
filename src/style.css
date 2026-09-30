@@ -182,8 +182,8 @@ main {
 }
 
 .checkbox-button {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   padding: 0;
   border-radius: 50%;
   border: 1px solid var(--color-ink-1);
@@ -196,13 +196,13 @@ main {
 
 .svg-container {
   cursor: pointer;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   scale: 0;
 }
 
 .svg-style {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   border-radius: 50%;
   background-image: url(icons/check.svg);
   background-position: center;
@@ -227,6 +227,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .button-selection {
@@ -236,8 +237,8 @@ main {
 }
 
 .delete-button {
-  height: 18px;
-  width: 18px;
+  height: 20px;
+  width: 20px;
   background-image: url(icons/alpha-x-circle.svg);
   background-position: center;
   background-repeat: no-repeat;
