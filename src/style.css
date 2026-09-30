@@ -15,7 +15,7 @@
   }
   
   body {
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
@@ -41,8 +41,6 @@
     text-wrap: balance;
 }
 
-
-
 :root {
   --primary-color: #0083ff;
   --secondary-color: #2093ff;
@@ -53,6 +51,7 @@
     --color-ink-1: #e4e4e4;
     --color-ink-2: #a2a2a2;
     --color-ink-2-opacity: #a2a2a283;
+    --complementary-1: #04c172;
 }
 
 /* ////////////////GENERAL SECTIONS//////////////////////////////// */
@@ -143,7 +142,7 @@ main {
 }
 
 #arrow-up {
-  fill: gray;
+  fill: var(--color-ink-2);
 }
 
 .button-arrow {
@@ -166,7 +165,7 @@ main {
   border-radius: 10px;
   background-color: var(--card-bg-1-color);
   opacity: 0.8;
-  min-height: 60px;
+  min-height: 70px;
   transition: background-color 0.1s ease;
 }
 
@@ -201,7 +200,7 @@ main {
 }
 
 .svg-style {
-  background-color: #0083ff;
+  background-color: var(--primary-color);
   border-radius: 50%;
   background-image: url(icons/check.svg);
   background-position: center;
@@ -212,7 +211,7 @@ main {
 
 .task {
   display: grid;
-  color: white;
+  color: var(--color-ink-1);
 }
 
 .title-task {
@@ -230,7 +229,8 @@ main {
 
 .button-selection {
   border: none;
-  background-color: rgba(0, 0, 0, 0.01);
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .delete-button {
@@ -251,17 +251,18 @@ main {
   display: grid;
   grid-template-rows: 60px 30px 30px 1fr;
   background-color: var(--card-bg-1-color);
-  color: white;
-  padding: 10px 0px;
+  color: var(--color-ink-1);
+  padding: 20px 0px;
   row-gap: 20px;
 }
 
 .profile-box {
   display: grid;
-  grid-template-columns: 70px 1fr;
-  grid-template-rows: 35px 35px;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 25px 25px;
   column-gap: 10px;
   padding: 0 20px;
+  align-self: center;
 }
 
 .profile-image {
@@ -276,10 +277,15 @@ main {
 .name {
   grid-area: 1 / 2 / 2 / 3;
   align-self: flex-end;
+  font-size:  medium;
+  color: var(--color-ink-1);
+  font-weight: 700;
 }
 
 .user-name {
   grid-area: 2 / 2 / 3 / 3;
+    font-size:  small;
+    color: var(--color-ink-2-opacity);
 }
 
 .all-mytasks-section {
@@ -302,8 +308,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
   background-color: var(--primary-color);
   border-radius: 50%;
   font-size: small;
@@ -315,6 +321,7 @@ main {
   gap: 80px;
   align-items: center;
   padding: 0 5px 0 20px;
+  color: var(--color-ink-1);
 }
 
 .list-section:hover {
@@ -334,7 +341,7 @@ main {
 .list-section div > svg {
   outline: none;
   width: 25px;
-  fill: #c7c3c3;
+  fill: var(--color-ink-1);
   transition: fill 0.3s ease;
 }
 
@@ -402,7 +409,7 @@ main {
 .list-section-unit {
   text-align: start;
   height: 45px;
-  color: white;
+  color: var(--color-ink-1);
   background-color: transparent;
   cursor: pointer;
   border: none;
@@ -416,7 +423,7 @@ main {
 .icon-section-unit {
   width: 25px;
   height: 25px;
-  background-color: rgb(0, 171, 111);
+  background-color: var(--complementary-1);
   border-radius: 50%;
   background-image: url(/src/icons/check.svg);
   background-position: center;
@@ -429,7 +436,7 @@ main {
   padding-left: 25px;
   height: 50px;
   gap: 10px;
-  color: #dbdada;
+  color: var(--color-ink-1);
   align-items: center;
   font-size: large;
 }
@@ -465,10 +472,8 @@ main {
 }
 
 .list-names-container {
-  
   display: flex;
   flex-direction: column;
-
 }
 
 .list-counter-container {
@@ -480,9 +485,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20px;
-  width: 20px;
-  background-color: #656565;
+  height: 24px;
+  width: 24px;
+  background-color: var(--card-bg-3-color);
   border-radius: 50%;
   font-size: small;
 }
@@ -493,7 +498,7 @@ main {
   padding: 20px 40px;
   width: 600px;
   height: 230px;
-  background-color: #252525;
+  background-color: var(--card-bg-2-color);
   border-radius: 10px;
   border: none;
 }
@@ -524,17 +529,17 @@ main {
   background-color: transparent;
   border: none;
   outline: none;
-  caret-color: #0083ff;
+  caret-color: var(--primary-color);
   font-size: xx-large;
-  color: white;
+  color: var(--color-ink-1);
 }
 
 #modal-form > button {
   height: 40px;
-  color: white;
+  color: var(--color-ink-1);
   border: none;
   border-radius: 20px;
-  background-color: #0083ff;
+  background-color: var(--primary-color);
   align-self: end;
   width: 150px;
   font-size: larger;
