@@ -22,6 +22,13 @@ function handleFormList() {
         e.preventDefault();
         
         const listName = e.currentTarget.inputlist.value;
+
+        if (inputNewList.some((element) => element.list === listName)) {
+            alert("List already exists!")
+            modalForm.reset();
+            return ;
+        }
+
         inputNewList.push({list : listName, checked : false});
         
         const container = document.createElement("div");
