@@ -48,6 +48,7 @@
     --card-bg-2-color: #252525;
     --card-bg-3-color: #424242;
     --card-bg-4-color: #1c1c1c;
+    --card-bg-5-color: #8d8c8c;
     --color-ink-1: #e4e4e4;
     --color-ink-2: #a2a2a2;
     --color-ink-2-opacity: #a2a2a283;
@@ -89,7 +90,8 @@ main {
   width: 350px;
   border-radius: 50%;
   background-color: var(--primary-color);
-  box-shadow: 8px -5px 10px #0053a1ab;
+  /* box-shadow: 8px -5px 10px #0053a1ab; */
+  box-shadow: 20px -10px 20px #014789de;
 }
 
 .ball-1 {
@@ -230,7 +232,7 @@ main {
 .button-selection {
   border: none;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.01);
 }
 
 .delete-button {
@@ -318,34 +320,53 @@ main {
 .list-section {
   display: flex;
   height: 40px;
-  gap: 80px;
+  gap: 10px;
   align-items: center;
+  justify-content: space-between;
   padding: 0 5px 0 20px;
   color: var(--color-ink-1);
+}
+
+.list-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list-icon-sidebar {
+  width: 18px;
+  height: 18px;
+  background-image: url(/src/icons/lock-outline.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .list-section:hover {
     background-color: var(--card-bg-3-color);
 }
 
-.list-section > p {
+.list-section-title > p {
   font-size: larger;
+  color: var(--color-ink-1);
 }
 
-.list-section > div {
+.list-section > button {
   background-color: transparent;
   padding: 0;
+  margin: 0;
   border: none;
+  outline: none;
 }
 
-.list-section div > svg {
+.list-section button > svg {
   outline: none;
   width: 25px;
   fill: var(--color-ink-1);
   transition: fill 0.3s ease;
 }
 
-.list-section div > svg:hover {
+.list-section button > svg:hover {
   fill: var(--primary-color);
 }
 
@@ -390,34 +411,42 @@ main {
 }
 
 .modal-contain-buttons {
+  max-height: 280px;
+  overflow: scroll;
+  scrollbar-width: none;
   display: flex;
   flex-direction: column;
+}
+
+.container-template {
+  padding: 0 24px;
+  transition: background-color 0.5s ease;
 }
 
 .container-section-unit {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  /* padding: 0 5px; */
   border-top: 0.1px solid var(--color-ink-2-opacity);
   border-left: none;
   border-right: none;
   border-bottom: none;
-  transition: background-color 0.5s ease;
 }
 
 .list-section-unit {
   text-align: start;
   height: 45px;
-  color: var(--color-ink-1);
+  color: var(--color-ink-2);
   background-color: transparent;
   cursor: pointer;
   border: none;
   font-weight: 600;
+  padding: 0;
 }
 
-.container-section-unit:hover {
-    background-color: var(--card-bg-2-color);
+.container-template:hover {
+    background-color: var(--card-bg-4-color);
 }
 
 .icon-section-unit {
@@ -431,14 +460,19 @@ main {
   background-size: contain;
 }
 
+.mylist-container {
+  padding: 5px 24px 0 24px;
+}
+
 .mylist-section {
   display: flex;
-  padding-left: 25px;
+  /* : 10px; */
   height: 50px;
   gap: 10px;
   color: var(--color-ink-1);
   align-items: center;
   font-size: large;
+  border-bottom: 0.1px solid var(--color-ink-2-opacity);
 }
 
 .mylist-section > p {
@@ -453,7 +487,6 @@ main {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  
 }
 
 /* /////////////////////////////LIST IN THE SIDEBAR/////////////////// */
@@ -463,12 +496,9 @@ main {
   text-align: start;
   height: 40px;
   border: none;
-  color: var(--color-ink-1);
+  color: var(--card-bg-5-color);
   background-color: transparent;
-}
-
-.sidebar-list-button:hover {
-  background-color: var(--card-bg-3-color);
+  cursor: pointer;
 }
 
 .list-names-container {
@@ -479,6 +509,11 @@ main {
 .list-counter-container {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.list-counter-container:hover {
+  background-color: var(--card-bg-3-color);
 }
 
 .number-tasks-list {
@@ -487,9 +522,11 @@ main {
   justify-content: center;
   height: 24px;
   width: 24px;
-  background-color: var(--card-bg-3-color);
+  color: var(--card-bg-3-color);
+  background-color: var(--card-bg-5-color);
   border-radius: 50%;
   font-size: small;
+  font-weight: 900;
 }
 
 /* ////////////////DIALOG/////////////////////////// */

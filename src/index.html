@@ -19,12 +19,14 @@
                 <div class="number-tasks">0</div>
             </div>
             
-            <div class="list-section">                
-                <p>My lists</p>
-
-                <div role="button" tabindex="0" id="add-list">
+            <div class="list-section">       
+                <div class="list-section-title">        
+                    <p>My lists</p>
+                    <p class="list-icon-sidebar"></p>
+                </div> 
+                <button id="add-list">
                     <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>                
-                </div>
+                </button>
                 
                 <dialog closedby="any" id="dialog-add-list">
                     <div id="close-dialog">
@@ -97,11 +99,13 @@
         </div>
     </main>
     <div class="modal-container">
-        <div class="mylist-section">
-            <p>My lists</p>
-            <p></p>
+        <div class="mylist-container">
+            <div class="mylist-section">
+                <p>My lists</p>
+                <p></p>
+            </div>
         </div>
-    <div class="modal-contain-buttons"></div>
+        <div class="modal-contain-buttons"></div>
     </div> 
 </body>
 </html>

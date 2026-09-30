@@ -20,12 +20,14 @@ function handleIconShowsModal(event) {
         inputNewList.forEach((listName) => {
  
             const container = document.createElement("div");
+            const containerTemplate = document.createElement("div");
             const list = document.createElement("button");
             const checkIcon = document.createElement("div");
 
-            container.classList.add("container-section-unit")
+            container.classList.add("container-section-unit");
+            containerTemplate.classList.add("container-template");  
             list.classList.add("list-section-unit");
-            
+
             if (listName.checked) {
                 checkIcon.classList.toggle("icon-section-unit");
             }
@@ -34,7 +36,8 @@ function handleIconShowsModal(event) {
 
             container.appendChild(list);
             container.appendChild(checkIcon);
-            modalContainButtons.appendChild(container);
+            containerTemplate.appendChild(container);
+            modalContainButtons.appendChild(containerTemplate);
             modalContainer.style.display = "block";
         })
     }
