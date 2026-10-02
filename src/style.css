@@ -256,7 +256,7 @@ main {
   background-color: var(--card-bg-1-color);
   color: var(--color-ink-1);
   padding: 20px 0px;
-  row-gap: 20px;
+  row-gap: 10px;
 }
 
 .profile-box {
@@ -296,6 +296,12 @@ main {
   grid-template-columns: 30px 1fr 30px;
   align-items: center;
   padding: 0 20px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.all-mytasks-section:hover {
+ background-color: var(--card-bg-3-color);
 }
 
 .mytask-icon {
@@ -316,6 +322,10 @@ main {
   background-color: var(--primary-color);
   border-radius: 50%;
   font-size: small;
+}
+
+.my-list-separator {
+  margin-top: 10px;
 }
 
 .list-section {
@@ -348,7 +358,7 @@ main {
 }
 
 .list-section-title > p {
-  font-size: larger;
+  font-size: large;
   color: var(--color-ink-1);
 }
 
@@ -365,6 +375,7 @@ main {
   width: 25px;
   fill: var(--color-ink-1);
   transition: fill 0.3s ease;
+  cursor: pointer;
 }
 
 .list-section button > svg:hover {
