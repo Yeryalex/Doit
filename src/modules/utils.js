@@ -81,4 +81,4 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
 
 }
 
-export {taskToggle, displayTasks, deleteButton, arrayTasks}
+export {taskToggle, displayTasks, deleteButton}

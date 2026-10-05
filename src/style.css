@@ -53,6 +53,7 @@
     --color-ink-2: #a2a2a2;
     --color-ink-2-opacity: #a2a2a283;
     --complementary-1: #04c172;
+    --complementary-2: #ffde05;
 }
 
 /* ////////////////GENERAL SECTIONS//////////////////////////////// */
@@ -256,6 +257,7 @@ main {
 
 .type-task-list {
   font-size: small ;
+  color: var(--color-ink-2);
 }
 
 .type-task-logo {
@@ -617,4 +619,99 @@ main {
 #modal-form > button:hover {
 
   background-color: var(--secondary-color);
+}
+
+/* ////////////////////DESCRIPTION MODAL///////////////////////// */
+
+
+.description-general-container {
+  position: absolute;
+  background-color: var(--card-bg-4-color);
+  border-radius: 10px;
+  padding: 10px 20px;
+  height: 600px;
+  width: 600px;
+  z-index: 1;
+  left: 70px;
+  top: 50px;
+}
+
+.title-container {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 120px 100px 1fr;
+  gap: 10px;
+}
+
+.form-container-description {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.title-input {
+  grid-area: 1 / 1 / 1 / 4;
+  caret-color: var(--primary-color);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: var(--color-ink-1);
+  font-size: xx-large;
+}
+
+.notes-container {
+
+  padding: 30px 0 5px 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid var(--card-bg-3-color);
+}
+
+.notes {
+  font-size: x-large;
+  color: var(--color-ink-2);
+}
+
+.input-description {
+  font-size: larger;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  caret-color: var(--primary-color);
+  color: var(--color-ink-1);
+}
+
+.edit-submit-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 24px;
+  width: 24px;
+  background-image: url(icons/alpha-x-circle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.priority {
+  background-color: var(--color-ink-1);
+  border: none;
+  border-radius: 10px;
+  color: var(--card-bg-3-color);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.priority:focus {
+  background-color: var(--complementary-2);
+}
+
+.input-date {
+  background-color: var(--secondary-color);
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  padding: 4px;
 }
