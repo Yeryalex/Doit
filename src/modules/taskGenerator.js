@@ -6,6 +6,9 @@ export function taskGenerator(projectName, title, id, isChecked) {
     const svgContainer = document.createElement("div");
     const taskContainer = document.createElement("div");
     // const tagSection = document.createElement("div");
+    const typeTaskContainer = document.createElement("div");
+    const typeTaskLogo = document.createElement("p");
+    const typeTask = document.createElement("p");
     const ptitle = document.createElement("h3");
     // const pdescription = document.createElement("h5");
     // const pdate = document.createElement("h6");
@@ -23,6 +26,9 @@ export function taskGenerator(projectName, title, id, isChecked) {
     buttonCheck.classList.add("checkbox-button");
     deleteButton.setAttribute("class", "button-selection");
     deleteButtonContainer.setAttribute("class", "delete-button-container");
+    typeTask.classList.add("type-task-list");
+    typeTaskLogo.classList.add("type-task-logo");
+    typeTaskContainer.classList.add("type-task-container");
 
     if (isChecked) {
 
@@ -42,13 +48,18 @@ export function taskGenerator(projectName, title, id, isChecked) {
     ptitle.classList.add("title-task")
     // pdescription.classList.add("description-task")
 
+    typeTask.textContent = `my lists > ${projectName}`;
     ptitle.innerText = title;
     // pdescription.innerText = description;
     // pdate.innerText = dueDate;
     // ppriority.innerText = priority;
 
+    typeTaskContainer.appendChild(typeTaskLogo);
+    typeTaskContainer.appendChild(typeTask);
+
     buttonCheck.appendChild(svgContainer);
     checkboxContainer.appendChild(buttonCheck);
+    taskContainer.appendChild(typeTaskContainer);
     taskContainer.appendChild(ptitle);
     // taskContainer.appendChild(pdescription);
     // tagSection.appendChild(pdate);

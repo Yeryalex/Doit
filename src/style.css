@@ -212,12 +212,12 @@ main {
 }
 
 .task {
-  display: grid;
+  /* display: grid; */
   color: var(--color-ink-1);
 }
 
 .title-task {
-  align-self: center;
+  /* align-self: center; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -246,6 +246,26 @@ main {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.type-task-container {
+  padding: 8px 0 2px 0;
+  display: flex;
+  align-items: center;
+}
+
+.type-task-list {
+  font-size: small ;
+}
+
+.type-task-logo {
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  background-image: url(/src/icons/lock-outline.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* ////////////////////////////////////SIDEBAR SECTION/////////////////////// */
