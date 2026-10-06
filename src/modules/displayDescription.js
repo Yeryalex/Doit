@@ -1,5 +1,8 @@
 import { mainTaskContainer } from "./taskSubmission.js"
 import { arrayTasks } from "../index.js";
+import { displayTasks } from "./utils.js";
+import {format} from "date-fns";
+        // this.dueDate = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy");
 
 
 function displayDescriptionTask() {
@@ -11,8 +14,6 @@ function displayDescriptionTask() {
         const taskContainer = e.target.closest(".general-task-container");
         if (!taskContainer) return ;
 
-
-        console.log("passed");
         arrayTasks.forEach((item) => {
             if (item.id === taskContainer.dataset.ids) {
 
@@ -22,7 +23,7 @@ function displayDescriptionTask() {
                 const inputDescription = document.createElement("input");
                 const inputDate = document.createElement("input");
                 const priority = document.createElement("button");
-                const submitButton = document.createElement("p");
+                const submitButton = document.createElement("button");
                 const notesContainer = document.createElement("div");
                 const notes = document.createElement("p");
                 const titleContainer = document.createElement("div");
@@ -50,10 +51,15 @@ function displayDescriptionTask() {
                 titleInput.value = item.title;
                 inputDescription.type = "text";
                 inputDate.type = "date";
+
+                inputDate.value = format( item.dueDate ? new Date(item.dueDate) : new Date(), "yyy-MM-dd");
+                
+
                 inputDescription.placeholder = "Insert your notes here"
+                inputDescription.value = (item.description) ? item.description : "";
                 priority.type = "button";
                 priority.innerText = "#Priority";
-                submitButton.role = "button";
+                // submitButton.role = "button";
                 submitButton.type = "submit"; ///////////////////////
                 notes.innerText = "Notes"
 
@@ -74,6 +80,24 @@ function displayDescriptionTask() {
                 divGeneralContainer.appendChild(typeTaskContainer);
                 divGeneralContainer.appendChild(formContainer);
                 main.appendChild(divGeneralContainer);
+
+                formContainer.addEventListener("submit", (e) => {
+                   
+                    e.preventDefault();
+
+                    const newTitle = e.target[0].value;
+                    const newDate = e.target[1].value;
+                    const newPriority = e.target[2].innerText;
+                    const newDescription = e.target[3].value;
+                    
+                    item.title = newTitle;
+                    item.dueDate = format( newDate ? new Date(newDate) : new Date(), "MMM dd yyyy");
+                    item.priority = newPriority;
+                    item.description = newDescription;
+
+                    displayTasks(arrayTasks, mainTaskContainer);
+                    divGeneralContainer.remove();
+                })
             }
         });
     });
