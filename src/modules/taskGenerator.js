@@ -1,11 +1,13 @@
 
 // export function taskGenerator(title, description, dueDate, priority, id, isChecked) {
-export function taskGenerator(projectName, title, id, isChecked) {
+export function taskGenerator(projectName, title, id, isChecked, priority) {
 
     const generalTaskContainer = document.createElement("div");
     const svgContainer = document.createElement("div");
     const taskContainer = document.createElement("div");
     // const tagSection = document.createElement("div");
+    const headerBar = document.createElement("div"); 
+    const priorityBar = document.createElement("div"); 
     const typeTaskContainer = document.createElement("div");
     const typeTaskLogo = document.createElement("p");
     const typeTask = document.createElement("p");
@@ -26,6 +28,8 @@ export function taskGenerator(projectName, title, id, isChecked) {
     buttonCheck.classList.add("checkbox-button");
     deleteButton.setAttribute("class", "button-selection");
     deleteButtonContainer.setAttribute("class", "delete-button-container");
+    
+    headerBar.classList.add("header-bar");
     typeTask.classList.add("type-task-list");
     typeTaskLogo.classList.add("type-task-logo");
     typeTaskContainer.classList.add("type-task-container");
@@ -38,7 +42,10 @@ export function taskGenerator(projectName, title, id, isChecked) {
         deleteButton.classList.toggle("delete-button");
         deleteButtonContainer.classList.toggle("style-button-container");
     }
-    if (!isChecked) {
+
+    if (priority) {
+        priorityBar.classList.add("priority-bar");
+        priorityBar.innerText = "Priority"
     }
 
     taskContainer.classList.add("task");
@@ -59,7 +66,9 @@ export function taskGenerator(projectName, title, id, isChecked) {
 
     buttonCheck.appendChild(svgContainer);
     checkboxContainer.appendChild(buttonCheck);
-    taskContainer.appendChild(typeTaskContainer);
+    headerBar.appendChild(typeTaskContainer);
+    headerBar.appendChild(priorityBar);
+    taskContainer.appendChild(headerBar);
     taskContainer.appendChild(ptitle);
     // taskContainer.appendChild(pdescription);
     // tagSection.appendChild(pdate);

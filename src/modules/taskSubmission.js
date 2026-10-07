@@ -60,7 +60,7 @@ function taskSubmission() {
         assignNumberTasks(numberTasks, arrayTasks.length, 1);
 
         let listSelected = inputNewList.find((e) => e.checked === true).list;
-        arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, null));
+        arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, false));
         
         
         displayTasks(arrayTasks, mainTaskContainer);

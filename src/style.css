@@ -167,13 +167,13 @@ main {
   grid-template-columns: 50px 1fr 50px;
   border-radius: 10px;
   background-color: var(--card-bg-1-color);
-  opacity: 0.8;
+  opacity: 0.9;
   min-height: 70px;
   transition: background-color 0.1s ease;
 }
 
 .general-task-container:hover {
-  background-color: var(--card-bg-3-color);
+  background-color: var(--card-bg-4-color);
 }
 
 .checkbox-container {
@@ -215,6 +215,7 @@ main {
 .task {
   /* display: grid; */
   color: var(--color-ink-1);
+  padding-top: 8px;
 }
 
 .title-task {
@@ -249,15 +250,23 @@ main {
   cursor: pointer;
 }
 
-.type-task-container {
-  padding: 8px 0 2px 0;
+.header-bar {
   display: flex;
   align-items: center;
+}
+
+
+
+.type-task-container {
+  /* padding: 0px 0 2px 0; */
+  display: flex;
+
 }
 
 .type-task-list {
   font-size: small ;
   color: var(--color-ink-2);
+
 }
 
 .type-task-logo {
@@ -268,6 +277,20 @@ main {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.priority-bar {
+  text-align: center;
+  /* text-align: start; */
+  color: var(--card-bg-4-color);
+  font-size: x-small;
+  font-weight: 900;
+  width: 90px;
+  height: 16px;
+  background-color: #ffde05;
+  /* background-color: #ffe605; */
+  border-radius: 5px;
+  margin-left: 20px;
 }
 
 /* ////////////////////////////////////SIDEBAR SECTION/////////////////////// */
@@ -628,7 +651,7 @@ main {
   position: absolute;
   background-color: var(--card-bg-4-color);
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 30px 40px;
   height: 600px;
   width: 600px;
   z-index: 1;
@@ -636,16 +659,21 @@ main {
   top: 50px;
 }
 
+/* .header-bar {
+  display: flex;
+}
+
+.priority-bar {
+  width: 50px;
+  height: 5px;
+  background-color: #ffde05;
+} */
+
 .title-container {
   padding-top: 10px;
   display: grid;
   grid-template-columns: 120px 100px 1fr;
   gap: 10px;
-}
-
-.form-container-description {
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .title-input {
@@ -682,8 +710,8 @@ main {
 
 .edit-submit-button {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  right: 12px;
   height: 24px;
   width: 24px;
   background-image: url(icons/alpha-x-circle.svg);
@@ -693,6 +721,7 @@ main {
   border: none;
   outline: none;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .priority {
@@ -702,10 +731,6 @@ main {
   color: var(--card-bg-3-color);
   font-weight: 900;
   cursor: pointer;
-}
-
-.priority:focus {
-  background-color: var(--complementary-2);
 }
 
 .input-date {

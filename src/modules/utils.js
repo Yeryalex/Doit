@@ -47,7 +47,7 @@ const displayTasks = (arrayTasks, mainTaskContainer) => {
     }
 
     arrayTasks.forEach((e) => {
-        const task = taskGenerator(e.projectName , e.title, e.id, e.isChecked);
+        const task = taskGenerator(e.projectName , e.title, e.id, e.isChecked, e.priority);
         mainTaskContainer.appendChild(task);
     });
 }

@@ -12,12 +12,17 @@ function displayDescriptionTask() {
     mainTaskContainer.addEventListener("click", (e) => {
 
         const taskContainer = e.target.closest(".general-task-container");
-        if (!taskContainer) return ;
+        const checkboxButton = e.target.closest(".checkbox-button");
+        const buttonDeletion = e.target.closest(".button-selection");
+        
+        if (!taskContainer || checkboxButton || buttonDeletion) return ;
 
         arrayTasks.forEach((item) => {
             if (item.id === taskContainer.dataset.ids) {
 
                 const divGeneralContainer = document.createElement("div");
+                // const priorityBar = document.createElement("div");
+                // const headerBar = document.createElement("div");
                 const formContainer = document.createElement("form");
                 const titleInput = document.createElement("input");
                 const inputDescription = document.createElement("input");
@@ -38,6 +43,9 @@ function displayDescriptionTask() {
                 titleInput.classList.add("title-input");
                 inputDate.classList.add("input-date");
                 priority.classList.add("priority");
+                // if (item.priority) priorityBar.classList.toggle("priority-bar");
+                // headerBar.classList.add("header-bar");
+                // priorityBar.classList.add("priority-bar");
                 titleContainer.classList.add("title-container");
                 divGeneralContainer.classList.add("description-general-container");
                 formContainer.classList.add("form-container-description");
@@ -58,9 +66,8 @@ function displayDescriptionTask() {
                 inputDescription.placeholder = "Insert your notes here"
                 inputDescription.value = (item.description) ? item.description : "";
                 priority.type = "button";
-                priority.innerText = "#Priority";
-                // submitButton.role = "button";
-                submitButton.type = "submit"; ///////////////////////
+                priority.innerText = "Priority";
+                submitButton.type = "submit";
                 notes.innerText = "Notes"
 
 
@@ -80,6 +87,21 @@ function displayDescriptionTask() {
                 divGeneralContainer.appendChild(typeTaskContainer);
                 divGeneralContainer.appendChild(formContainer);
                 main.appendChild(divGeneralContainer);
+                
+                if (item.priority) priority.style.backgroundColor = "#ffde05";
+
+                priority.addEventListener("click", () => {
+                    
+                    if (!item.priority)
+                    {  
+                        priority.style.backgroundColor = "#ffde05";
+                        item.priority = true;
+                    }
+                    else {
+                        priority.style.backgroundColor = "#e4e4e4";
+                        item.priority = false;
+                    }
+                })
 
                 formContainer.addEventListener("submit", (e) => {
                    
@@ -87,12 +109,10 @@ function displayDescriptionTask() {
 
                     const newTitle = e.target[0].value;
                     const newDate = e.target[1].value;
-                    const newPriority = e.target[2].innerText;
                     const newDescription = e.target[3].value;
                     
                     item.title = newTitle;
                     item.dueDate = format( newDate ? new Date(newDate) : new Date(), "MMM dd yyyy");
-                    item.priority = newPriority;
                     item.description = newDescription;
 
                     displayTasks(arrayTasks, mainTaskContainer);
