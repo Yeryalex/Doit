@@ -37,9 +37,7 @@ function handleFormList() {
 
         container.classList.add("list-counter-container");
         listElement.classList.add("sidebar-list-button");
-        // counter.classList.add("number-tasks-list");
 
-        // counter.textContent = "0";
         listElement.innerText = listName;
 
         container.appendChild(listElement);
