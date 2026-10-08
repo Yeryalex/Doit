@@ -68,7 +68,7 @@ main {
 .main-container {
   position: relative;
   display: grid;
-  grid-template-rows: 1fr 60px;
+  grid-template-rows: 1fr 7fr 60px;
   background-color: var(--card-bg-2-color);
 }
 
@@ -78,10 +78,26 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  height: calc(100vh - 60px);
+  height: calc(90vh - 60px);
   overflow: auto;
   scrollbar-width: none;
   z-index: 1;
+}
+
+.welcome-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  padding: 20px 20px 0px 20px;
+  font-size: larger;
+}
+
+.welcome-title > h2{
+  color: var(--color-ink-1);
+}
+.welcome-title h2 + h2{
+  color: var(--color-ink-2);
 }
 
 .decoration-ball {
