@@ -94,11 +94,16 @@ const displayTasksSpecific = (arrayTasks, mainTaskContainer) => {
         mainTaskContainer.removeChild(mainTaskContainer.firstChild);
     }
 
-        const titleProject = document.createElement("h3");
-        titleProject.classList.add("title-project");
-        titleProject.innerText = `${arrayTasks[0].projectName} List`;
-        mainTaskContainer.appendChild(titleProject);
+       
+        if (arrayTasks.length)
+        {
+                    const titleProject = document.createElement("h3");
 
+            titleProject.classList.add("title-project");
+            titleProject.innerText = `${arrayTasks[0].projectName} List`;
+        
+        mainTaskContainer.appendChild(titleProject);
+        }
     arrayTasks.forEach((e) => {
         const task = taskGeneratorSpecific(e.projectName , e.title, e.id, e.isChecked, e.priority);
         mainTaskContainer.appendChild(task);
@@ -123,7 +128,7 @@ function tasksByList() {
 
         const nameList = e.target.closest(".list-counter-container");
 
-        if (!nameList) return ;
+        if (!nameList || !arrayTasks.length) return ;
         mainTaskContainer.classList.add("list-selected-bg");
         
         
@@ -131,7 +136,6 @@ function tasksByList() {
 
         
         displayTasksSpecific(specificTasks, mainTaskContainer)
-        // console.dir(nameList.children[0].innerText);
     })
 
 }

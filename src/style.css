@@ -78,7 +78,7 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  height: 70vh;
+  height: 75vh;
   overflow: auto;
   scrollbar-width: none;
   z-index: 1;
@@ -323,7 +323,7 @@ p.title {
   background-color: var(--card-bg-4-color);
   border-radius: 10px;
   padding: 20px 30px;
-  margin: 0 40px 10px 40px;
+  margin: 0 40px 0px 40px;
   width: 85%;
 }
 
