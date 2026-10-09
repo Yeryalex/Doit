@@ -3,6 +3,7 @@ import { inputNewList } from "./modalFormList.js";
 import { taskInfo } from "./taskClass.js";
 import { displayTasks } from "./utils.js";
 import { assignNumberTasks, listCounter} from "./listCounter.js";
+import { displayTasksSpecific } from "./tasksByList.js";
 
 const form = document.querySelector("#task-form");
 const title = document.querySelector("#title");
@@ -62,8 +63,8 @@ function taskSubmission() {
         let listSelected = inputNewList.find((e) => e.checked === true).list;
         arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, false));
         
-        
-        displayTasks(arrayTasks, mainTaskContainer);
+        mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(arrayTasks, mainTaskContainer) :
+                    displayTasks(arrayTasks, mainTaskContainer);
         listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
          
         console.log(arrayTasks)

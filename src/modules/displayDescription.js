@@ -2,8 +2,7 @@ import { mainTaskContainer } from "./taskSubmission.js"
 import { arrayTasks } from "../index.js";
 import { displayTasks } from "./utils.js";
 import {format} from "date-fns";
-        // this.dueDate = format( dueDate.value ? new Date(dueDate.value) : new Date(), "MMM dd yyyy");
-
+import { displayTasksSpecific } from "./tasksByList.js";
 
 function displayDescriptionTask() {
 
@@ -114,7 +113,8 @@ function displayDescriptionTask() {
                     item.title = newTitle;
                     item.dueDate = format( newDate ? new Date(newDate) : new Date(), "MMM dd yyyy");
                     item.description = newDescription;
-
+                    
+                    mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(arrayTasks, mainTaskContainer) :
                     displayTasks(arrayTasks, mainTaskContainer);
                     divGeneralContainer.remove();
                 })

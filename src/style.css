@@ -192,7 +192,8 @@ p.title {
   border-radius: 10px;
   background-color: var(--card-bg-1-color);
   opacity: 0.9;
-  min-height: 70px;
+  padding: 10px 10px 10px 0;
+  /* min-height: 70px; */
   transition: background-color 0.1s ease;
 }
 
@@ -239,7 +240,7 @@ p.title {
 .task {
   /* display: grid; */
   color: var(--color-ink-1);
-  padding-top: 8px;
+  /* padding-top: 8px; */
 }
 
 .title-task {
@@ -277,6 +278,7 @@ p.title {
 .header-bar {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 
@@ -284,7 +286,7 @@ p.title {
 .type-task-container {
   /* padding: 0px 0 2px 0; */
   display: flex;
-
+  /* justify-content: space-between; */
 }
 
 .type-task-list {
@@ -314,14 +316,20 @@ p.title {
   background-color: #ffde05;
   /* background-color: #ffe605; */
   border-radius: 5px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .list-selected-bg {
   background-color: var(--card-bg-4-color);
   border-radius: 10px;
   padding: 20px 30px;
-  margin: 10px 20px 0 20px;
+  margin: 0 40px 10px 40px;
+  width: 85%;
+}
+
+.title-project {
+  color: var(--color-ink-1);
+  /* position: sticky; */
 }
 
 /* ////////////////////////////////////SIDEBAR SECTION/////////////////////// */

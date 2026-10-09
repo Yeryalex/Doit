@@ -3,7 +3,7 @@ import { arrayTasks } from "../index.js";
 import { assignNumberTasks } from "./listCounter.js";
 import { inputNewList } from "./modalFormList.js";
 import { listCounter } from "./listCounter.js";
-
+import { displayTasksSpecific } from "./tasksByList.js";
 
 const taskToggle = (mainTaskContainer, arrayTasks) => {
     
@@ -67,7 +67,9 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
             if (element.id === taskContainer.dataset.ids) {
                 
                 arrayTasks.splice(index, 1);
-                displayTasks(arrayTasks, mainTaskContainer);
+                mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(arrayTasks, mainTaskContainer) :
+                    displayTasks(arrayTasks, mainTaskContainer);
+                // displayTasks(arrayTasks, mainTaskContainer);
             }
         });
         const allLists = document.querySelectorAll(".list-counter-container");
