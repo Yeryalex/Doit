@@ -97,7 +97,7 @@ const displayTasksSpecific = (arrayTasks, mainTaskContainer) => {
        
         if (arrayTasks.length)
         {
-                    const titleProject = document.createElement("h3");
+            const titleProject = document.createElement("h3");
 
             titleProject.classList.add("title-project");
             titleProject.innerText = `${arrayTasks[0].projectName} List`;
@@ -115,26 +115,29 @@ function tasksByList() {
 
     const selectedList = document.querySelector(".list-names-container");
     const allMyTasks = document.querySelector(".all-mytasks-section");
+    const listForm = document.querySelector(".modal-showlist-icon");
 
 
     allMyTasks.addEventListener("click", (e) => {
 
         mainTaskContainer.classList.remove("list-selected-bg");
+         listForm.classList.add("modal-showlist-icon");
 
         displayTasks(arrayTasks, mainTaskContainer);
     })
 
     selectedList.addEventListener("click", (e) => {
 
-        const nameList = e.target.closest(".list-counter-container");
+        const nameList = e.target.closest(".list-counter-container");       
 
+        listForm.classList.remove("modal-showlist-icon");
         if (!nameList || !arrayTasks.length) return ;
+        if (!arrayTasks.some((item) => item.projectName === nameList.children[0].innerText)) return ;
+       
         mainTaskContainer.classList.add("list-selected-bg");
-        
-        
+        mainTaskContainer.setAttribute("name", nameList.children[0].innerText);
         const specificTasks = arrayTasks.filter((tasks) => tasks.projectName === nameList.children[0].innerText); 
 
-        
         displayTasksSpecific(specificTasks, mainTaskContainer)
     })
 

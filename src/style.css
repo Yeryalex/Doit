@@ -60,7 +60,7 @@
 
 main {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 220px 1fr;
   height: 100vh;
   overflow: hidden;
 }
@@ -68,17 +68,17 @@ main {
 .main-container {
   position: relative;
   display: grid;
-  /* grid-template-rows: 1fr 6fr 60px; */
+  grid-template-rows: 120px;
   background-color: var(--card-bg-2-color);
 }
 
 .main-task-container {
   position: relative;
-  padding: 10px 40px 0 40px;
+  padding: 0px 40px 0 40px;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  height: 75vh;
+  height: 72vh;
   overflow: auto;
   scrollbar-width: none;
   z-index: 1;
@@ -89,7 +89,7 @@ main {
   flex-direction: column;
   justify-content: center;
   z-index: 1;
-  padding: 20px 20px 0px 40px;
+  padding: 0px 30px;
   font-size: larger;
 }
 
@@ -193,7 +193,6 @@ p.title {
   background-color: var(--card-bg-1-color);
   opacity: 0.9;
   padding: 10px 10px 10px 0;
-  /* min-height: 70px; */
   transition: background-color 0.1s ease;
 }
 
@@ -238,13 +237,10 @@ p.title {
 }
 
 .task {
-  /* display: grid; */
   color: var(--color-ink-1);
-  /* padding-top: 8px; */
 }
 
 .title-task {
-  /* align-self: center; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -284,9 +280,7 @@ p.title {
 
 
 .type-task-container {
-  /* padding: 0px 0 2px 0; */
   display: flex;
-  /* justify-content: space-between; */
 }
 
 .type-task-list {
@@ -307,16 +301,13 @@ p.title {
 
 .priority-bar {
   text-align: center;
-  /* text-align: start; */
   color: var(--card-bg-4-color);
   font-size: x-small;
   font-weight: 900;
   width: 90px;
   height: 16px;
   background-color: #ffde05;
-  /* background-color: #ffe605; */
   border-radius: 5px;
-  /* margin-left: 20px; */
 }
 
 .list-selected-bg {
@@ -329,7 +320,6 @@ p.title {
 
 .title-project {
   color: var(--color-ink-1);
-  /* position: sticky; */
 }
 
 /* ////////////////////////////////////SIDEBAR SECTION/////////////////////// */

@@ -60,11 +60,24 @@ function taskSubmission() {
 
         assignNumberTasks(numberTasks, arrayTasks.length, 1);
 
-        let listSelected = inputNewList.find((e) => e.checked === true).list;
-        arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, false));
+        let listSelected = null;
+        if (mainTaskContainer.classList.contains("list-selected-bg")) {
+            
+            listSelected = mainTaskContainer.attributes[1].value;
+            arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, false));
         
-        mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(arrayTasks, mainTaskContainer) :
-                    displayTasks(arrayTasks, mainTaskContainer);
+            const arraySpecific = arrayTasks.filter((item) => item.projectName === mainTaskContainer.attributes[1].value);
+
+            displayTasksSpecific(arraySpecific, mainTaskContainer);
+        }
+        else {
+            listSelected = inputNewList.find((e) => e.checked === true).list;
+            arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, false));
+            displayTasks(arrayTasks, mainTaskContainer);
+        
+        }
+        
+        
         listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
          
         console.log(arrayTasks)
