@@ -152,10 +152,9 @@ function tasksByList() {
 
         const nameList = e.target.closest(".list-counter-container");       
 
-        // if (!nameList || !arrayTasks.length) { 
-        //     // noTasksMessage(mainTaskContainer)
-        //     return ;
-        // }
+        if (!nameList ) { 
+            return ;
+        }
 
         if (!arrayTasks.some((item) => item.projectName === nameList.children[0].innerText)){
             
