@@ -114,8 +114,13 @@ function displayDescriptionTask() {
                     item.dueDate = format( newDate ? new Date(newDate) : new Date(), "MMM dd yyyy");
                     item.description = newDescription;
                     
-                    mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(arrayTasks, mainTaskContainer) :
+                    const generalTaskContainer = document.querySelector(".general-task-container");
+                    const arraySpecific = arrayTasks.filter((item) => item.projectName === generalTaskContainer.attributes[1].value);
+
+
+                    mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(arraySpecific, mainTaskContainer) :
                     displayTasks(arrayTasks, mainTaskContainer);
+
                     divGeneralContainer.remove();
                 })
             }

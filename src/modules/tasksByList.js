@@ -121,19 +121,31 @@ function tasksByList() {
     allMyTasks.addEventListener("click", (e) => {
 
         mainTaskContainer.classList.remove("list-selected-bg");
-         listForm.classList.add("modal-showlist-icon");
+        listForm.classList.add("modal-showlist-icon");
 
-        displayTasks(arrayTasks, mainTaskContainer);
-    })
+        if (!arrayTasks.length) {
+
+            mainTaskContainer.textContent = "";
+
+            const messageNoTasks = document.createElement("p");
+            messageNoTasks.classList.add("message-no-task");
+            messageNoTasks.innerText = "There are not tasks";
+
+            mainTaskContainer.appendChild(messageNoTasks);
+        }
+        else {
+            displayTasks(arrayTasks, mainTaskContainer);
+        }
+})
 
     selectedList.addEventListener("click", (e) => {
 
         const nameList = e.target.closest(".list-counter-container");       
 
-        listForm.classList.remove("modal-showlist-icon");
         if (!nameList || !arrayTasks.length) return ;
         if (!arrayTasks.some((item) => item.projectName === nameList.children[0].innerText)) return ;
        
+        listForm.classList.remove("modal-showlist-icon");
         mainTaskContainer.classList.add("list-selected-bg");
         mainTaskContainer.setAttribute("name", nameList.children[0].innerText);
         const specificTasks = arrayTasks.filter((tasks) => tasks.projectName === nameList.children[0].innerText); 

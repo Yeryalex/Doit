@@ -491,8 +491,8 @@ p.title {
   width: 400px;
   height: 350px;
   position: absolute;
-  bottom: 70px;
-  left: 240px;
+  bottom: 90px;
+  left: 260px;
   z-index: 1;
 }
 
@@ -768,4 +768,21 @@ p.title {
   border-radius: 10px;
   border: none;
   padding: 4px;
+}
+
+.message-no-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 150px;
+  width: 70%;
+  background-color: #0e0d0d;
+  color: var(--color-ink-1);
+  font-size: xx-large;
+  opacity: 0.8;
+  border-radius: 10px;
+  padding: 10px;
+  align-self: center;
+  top: 16vh;
 }
