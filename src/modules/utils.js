@@ -72,7 +72,6 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
 
                 mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(specificTasks, mainTaskContainer) :
                     displayTasks(arrayTasks, mainTaskContainer);
-                // displayTasks(arrayTasks, mainTaskContainer);
             }
         });
         const allLists = document.querySelectorAll(".list-counter-container");
@@ -81,9 +80,7 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
 
         assignNumberTasks(numberTasks, arrayTasks.length, 0);
         listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
-
     })
-
 }
 
 export {taskToggle, displayTasks, deleteButton}

@@ -93,33 +93,28 @@ const displayTasksSpecific = (arrayTasks, mainTaskContainer) => {
     while (mainTaskContainer.firstChild) {
         mainTaskContainer.removeChild(mainTaskContainer.firstChild);
     }
-
-       console.log(arrayTasks.length)
-        if (arrayTasks.length)
-        {
-            const titleProject = document.createElement("h3");
-
-            titleProject.classList.add("title-project");
-            titleProject.innerText = `${arrayTasks[0].projectName} List`;
+    
+    if (arrayTasks.length) {
+        
+        const titleProject = document.createElement("h3");
+        titleProject.classList.add("title-project");
+        titleProject.innerText = `${arrayTasks[0].projectName} List`;
         
         mainTaskContainer.appendChild(titleProject);
-            arrayTasks.forEach((e) => {
-        const task = taskGeneratorSpecific(e.projectName , e.title, e.id, e.isChecked, e.priority);
-        mainTaskContainer.appendChild(task);
-    });
-        }
-        else {
-                        const titleProject = document.createElement("h3");
-
-            titleProject.classList.add("title-project");
-            console.dir(mainTaskContainer)
-            titleProject.innerText = `${mainTaskContainer.attributes[1].value} List`;
-            noTasksMessage(mainTaskContainer);
-
+        
+        arrayTasks.forEach((e) => {
+            const task = taskGeneratorSpecific(e.projectName , e.title, e.id, e.isChecked, e.priority);
+            mainTaskContainer.appendChild(task);
+        });
+    }
+    else {
+        const titleProject = document.createElement("h3");
+        titleProject.classList.add("title-project");
+        titleProject.innerText = `${mainTaskContainer.attributes[1].value} List`;
+        noTasksMessage(mainTaskContainer);
         mainTaskContainer.appendChild(titleProject);
 
-        }
-
+    }
 }
 
 function noTasksMessage(mainTaskContainer) {
@@ -152,21 +147,17 @@ function tasksByList() {
 
         const nameList = e.target.closest(".list-counter-container");       
 
-        if (!nameList ) { 
-            return ;
-        }
+        if (!nameList ) return ;
 
         if (!arrayTasks.some((item) => item.projectName === nameList.children[0].innerText)){
             
-                    listForm.classList.remove("modal-showlist-icon");
-
+            listForm.classList.remove("modal-showlist-icon");
             mainTaskContainer.classList.add("list-selected-bg");
             mainTaskContainer.setAttribute("name", nameList.children[0].innerText);
             
             const specificTasks = arrayTasks.filter((tasks) => tasks.projectName === nameList.children[0].innerText); 
 
             displayTasksSpecific(specificTasks, mainTaskContainer)
-
             return ;
         }
        
@@ -179,6 +170,5 @@ function tasksByList() {
     })
 
 }
-
 
 export { tasksByList, displayTasksSpecific }

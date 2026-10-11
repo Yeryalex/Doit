@@ -20,8 +20,6 @@ function displayDescriptionTask() {
             if (item.id === taskContainer.dataset.ids) {
 
                 const divGeneralContainer = document.createElement("div");
-                // const priorityBar = document.createElement("div");
-                // const headerBar = document.createElement("div");
                 const formContainer = document.createElement("form");
                 const titleInput = document.createElement("input");
                 const inputDescription = document.createElement("input");
@@ -42,9 +40,6 @@ function displayDescriptionTask() {
                 titleInput.classList.add("title-input");
                 inputDate.classList.add("input-date");
                 priority.classList.add("priority");
-                // if (item.priority) priorityBar.classList.toggle("priority-bar");
-                // headerBar.classList.add("header-bar");
-                // priorityBar.classList.add("priority-bar");
                 titleContainer.classList.add("title-container");
                 divGeneralContainer.classList.add("description-general-container");
                 formContainer.classList.add("form-container-description");

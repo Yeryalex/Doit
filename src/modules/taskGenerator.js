@@ -5,16 +5,12 @@ export function taskGenerator(projectName, title, id, isChecked, priority) {
     const generalTaskContainer = document.createElement("div");
     const svgContainer = document.createElement("div");
     const taskContainer = document.createElement("div");
-    // const tagSection = document.createElement("div");
     const headerBar = document.createElement("div"); 
     const priorityBar = document.createElement("div"); 
     const typeTaskContainer = document.createElement("div");
     const typeTaskLogo = document.createElement("p");
     const typeTask = document.createElement("p");
     const ptitle = document.createElement("h3");
-    // const pdescription = document.createElement("h5");
-    // const pdate = document.createElement("h6");
-    // const ppriority = document.createElement("h6");
     const checkboxContainer = document.createElement("div");
     const buttonCheck = document.createElement("button");
     const deleteButtonContainer = document.createElement("div");
@@ -28,7 +24,6 @@ export function taskGenerator(projectName, title, id, isChecked, priority) {
     buttonCheck.classList.add("checkbox-button");
     deleteButton.setAttribute("class", "button-selection");
     deleteButtonContainer.setAttribute("class", "delete-button-container");
-    
     headerBar.classList.add("header-bar");
     typeTask.classList.add("type-task-list");
     typeTaskLogo.classList.add("type-task-logo");
@@ -49,33 +44,19 @@ export function taskGenerator(projectName, title, id, isChecked, priority) {
     }
 
     taskContainer.classList.add("task");
-    // tagSection.classList.add("tag-section");
-    // pdate.classList.add("pdate");
-    // ppriority.classList.add("ppriority");
     ptitle.classList.add("title-task")
-    // pdescription.classList.add("description-task")
-
     typeTask.textContent = `my lists > ${projectName}`;
     ptitle.innerText = title;
-    // pdescription.innerText = description;
-    // pdate.innerText = dueDate;
-    // ppriority.innerText = priority;
 
     typeTaskContainer.appendChild(typeTaskLogo);
     typeTaskContainer.appendChild(typeTask);
-
     buttonCheck.appendChild(svgContainer);
     checkboxContainer.appendChild(buttonCheck);
     headerBar.appendChild(typeTaskContainer);
     headerBar.appendChild(priorityBar);
     taskContainer.appendChild(headerBar);
     taskContainer.appendChild(ptitle);
-    // taskContainer.appendChild(pdescription);
-    // tagSection.appendChild(pdate);
-    // tagSection.appendChild(ppriority);
-    // taskContainer.appendChild(tagSection);
     deleteButtonContainer.appendChild(deleteButton)
-
     generalTaskContainer.appendChild(checkboxContainer);
     generalTaskContainer.appendChild(taskContainer);
     generalTaskContainer.appendChild(deleteButtonContainer);
