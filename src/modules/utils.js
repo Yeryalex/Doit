@@ -67,7 +67,10 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
             if (element.id === taskContainer.dataset.ids) {
                 
                 arrayTasks.splice(index, 1);
-                mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(arrayTasks, mainTaskContainer) :
+                
+                const specificTasks = arrayTasks.filter((tasks) => tasks.projectName === taskContainer.attributes[1].value); 
+
+                mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(specificTasks, mainTaskContainer) :
                     displayTasks(arrayTasks, mainTaskContainer);
                 // displayTasks(arrayTasks, mainTaskContainer);
             }

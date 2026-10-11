@@ -94,7 +94,7 @@ const displayTasksSpecific = (arrayTasks, mainTaskContainer) => {
         mainTaskContainer.removeChild(mainTaskContainer.firstChild);
     }
 
-       
+       console.log(arrayTasks.length)
         if (arrayTasks.length)
         {
             const titleProject = document.createElement("h3");
@@ -103,13 +103,35 @@ const displayTasksSpecific = (arrayTasks, mainTaskContainer) => {
             titleProject.innerText = `${arrayTasks[0].projectName} List`;
         
         mainTaskContainer.appendChild(titleProject);
-        }
-    arrayTasks.forEach((e) => {
+            arrayTasks.forEach((e) => {
         const task = taskGeneratorSpecific(e.projectName , e.title, e.id, e.isChecked, e.priority);
         mainTaskContainer.appendChild(task);
     });
+        }
+        else {
+                        const titleProject = document.createElement("h3");
+
+            titleProject.classList.add("title-project");
+            console.dir(mainTaskContainer)
+            titleProject.innerText = `${mainTaskContainer.attributes[1].value} List`;
+            noTasksMessage(mainTaskContainer);
+
+        mainTaskContainer.appendChild(titleProject);
+
+        }
+
 }
 
+function noTasksMessage(mainTaskContainer) {
+    
+    mainTaskContainer.textContent = "";
+
+    const messageNoTasks = document.createElement("p");
+    messageNoTasks.classList.add("message-no-task");
+    messageNoTasks.innerText = "There are not tasks";
+
+    mainTaskContainer.appendChild(messageNoTasks);
+}
 
 function tasksByList() {
 
@@ -123,27 +145,31 @@ function tasksByList() {
         mainTaskContainer.classList.remove("list-selected-bg");
         listForm.classList.add("modal-showlist-icon");
 
-        if (!arrayTasks.length) {
-
-            mainTaskContainer.textContent = "";
-
-            const messageNoTasks = document.createElement("p");
-            messageNoTasks.classList.add("message-no-task");
-            messageNoTasks.innerText = "There are not tasks";
-
-            mainTaskContainer.appendChild(messageNoTasks);
-        }
-        else {
-            displayTasks(arrayTasks, mainTaskContainer);
-        }
+        arrayTasks.length ? displayTasks(arrayTasks, mainTaskContainer): noTasksMessage(mainTaskContainer);
 })
 
     selectedList.addEventListener("click", (e) => {
 
         const nameList = e.target.closest(".list-counter-container");       
 
-        if (!nameList || !arrayTasks.length) return ;
-        if (!arrayTasks.some((item) => item.projectName === nameList.children[0].innerText)) return ;
+        // if (!nameList || !arrayTasks.length) { 
+        //     // noTasksMessage(mainTaskContainer)
+        //     return ;
+        // }
+
+        if (!arrayTasks.some((item) => item.projectName === nameList.children[0].innerText)){
+            
+                    listForm.classList.remove("modal-showlist-icon");
+
+            mainTaskContainer.classList.add("list-selected-bg");
+            mainTaskContainer.setAttribute("name", nameList.children[0].innerText);
+            
+            const specificTasks = arrayTasks.filter((tasks) => tasks.projectName === nameList.children[0].innerText); 
+
+            displayTasksSpecific(specificTasks, mainTaskContainer)
+
+            return ;
+        }
        
         listForm.classList.remove("modal-showlist-icon");
         mainTaskContainer.classList.add("list-selected-bg");
