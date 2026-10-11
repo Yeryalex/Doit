@@ -326,11 +326,11 @@ p.title {
 
 .sidebar {
   display: grid;
-  grid-template-rows: 60px 30px 30px 1fr;
+  grid-template-rows: 80px 40px 40px;
   background-color: var(--card-bg-1-color);
   color: var(--color-ink-1);
-  padding: 20px 0px;
-  row-gap: 10px;
+  padding: 20px 0;
+  align-items: center;
 }
 
 .profile-box {
@@ -372,6 +372,7 @@ p.title {
   padding: 0 20px;
   height: 40px;
   cursor: pointer;
+  /* margin-top: 10px; */
 }
 
 .all-mytasks-section:hover {
@@ -398,17 +399,12 @@ p.title {
   font-size: small;
 }
 
-.my-list-separator {
-  margin-top: 10px;
-}
-
 .list-section {
   display: flex;
   height: 40px;
-  gap: 10px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px 0 20px;
+  padding: 20px 20px;
   color: var(--color-ink-1);
 }
 
@@ -455,6 +451,7 @@ p.title {
 .list-section button > svg:hover {
   fill: var(--primary-color);
 }
+
 
 /* ///////////////////////////MODAl ADD PROJECTS///////////////////// */
 
@@ -590,6 +587,10 @@ p.title {
 .list-names-container {
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+  scrollbar-width: none;
+  height: calc(100vh - 200px);
+  align-self: baseline;
 }
 
 .list-counter-container {
@@ -687,16 +688,6 @@ p.title {
   left: 70px;
   top: 50px;
 }
-
-/* .header-bar {
-  display: flex;
-}
-
-.priority-bar {
-  width: 50px;
-  height: 5px;
-  background-color: #ffde05;
-} */
 
 .title-container {
   padding-top: 10px;
