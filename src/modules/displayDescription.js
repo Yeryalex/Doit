@@ -6,7 +6,7 @@ import { displayTasksSpecific } from "./tasksByList.js";
 
 function displayDescriptionTask() {
 
-    const main = document.querySelector("main");
+    const mainContainer = document.querySelector(".main-container");
 
     mainTaskContainer.addEventListener("click", (e) => {
 
@@ -85,7 +85,7 @@ function displayDescriptionTask() {
                 
                 divGeneralContainer.appendChild(typeTaskContainer);
                 divGeneralContainer.appendChild(formContainer);
-                main.appendChild(divGeneralContainer);
+                mainContainer.appendChild(divGeneralContainer);
                 
                 if (item.priority) priority.style.backgroundColor = "#ffde05";
 

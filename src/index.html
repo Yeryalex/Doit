@@ -47,7 +47,6 @@
                 <div class="list-counter-container">
                     <button class="sidebar-list-button">Personal</button>
                     <div></div>
-                    <!-- <div class="number-tasks-list">0</div> -->
                 </div>
             </div>
 
@@ -65,7 +64,15 @@
             <div class="decoration-ball ball-4"></div>
             
             <div class="main-task-container"></div>
-            
+                 <div class="modal-container">
+        <div class="mylist-container">
+            <div class="mylist-section">
+                <p>My lists</p>
+                <p></p>
+            </div>
+        </div>
+        <div class="modal-contain-buttons"></div>
+    </div> 
             <form action="#" id="task-form">
 
                 <div role="button" tabindex="0" class="modal-showlist-icon">
@@ -76,43 +83,14 @@
                       <label for="title"></label>
                     <input type="text" id="title" placeholder="Add task" maxlength="80" required>
                 </p>
-                <!-- <p class="description">
-                    <label for="description"></label>
-                    <input type="text" id="description" placeholder="Description" maxlength="80">
-                </p> -->
+
                 <button class="button-arrow">
                         <svg id="arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11,20V7.75L5.75,13L5,12.34L11.5,5.84L18,12.34L17.25,13L12,7.75V20H11Z" /></svg>
                     </button>
-                <!-- <div class="options-container">
-
-                    <p class="priority">
-                       <label for="priority">Priority:</label>
-                        <select name="Priority" id="priority">
-                            <option value="High" selected>High</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Low">Low</option>
-                        </select>   
-                    </p> 
-                    <p class="dueDate">
-                        <label for="dueDate"></label>
-                        <input type="date" id="dueDate">
-                    </p>
-           
-                    <button class="button-arrow">
-                        <svg id="arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11,20V7.75L5.75,13L5,12.34L11.5,5.84L18,12.34L17.25,13L12,7.75V20H11Z" /></svg>
-                    </button> -->
                 </div>
             </form>
         </div>
     </main>
-    <div class="modal-container">
-        <div class="mylist-container">
-            <div class="mylist-section">
-                <p>My lists</p>
-                <p></p>
-            </div>
-        </div>
-        <div class="modal-contain-buttons"></div>
-    </div> 
+
 </body>
 </html>
