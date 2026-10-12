@@ -2,6 +2,7 @@ import { displayTasks } from "./utils.js";
 import { arrayTasks } from "../index.js";
 import { mainTaskContainer } from "./taskSubmission.js";
 import { assignNumberTasks, listCounter } from "./listCounter.js";
+import { inputNewList } from "./modalFormList.js";
 
 function taskGeneratorSpecific(projectName, title, id, isChecked, priority) {
 
@@ -159,6 +160,12 @@ function tasksByList() {
         const listNameContainer = e.target.closest(".list-counter-container");  
         
         if (!listNameContainer) return ;
+        listNameContainer.addEventListener("mouseenter", () => {
+
+            listNameContainer.children[1].classList.add("delete-list");
+            // const deleteButtonList = e.target.closest(".delete-list");
+
+        })
         const deleteButtonList = e.target.closest(".delete-list");
 
         if (deleteButtonList) { 
@@ -167,14 +174,24 @@ function tasksByList() {
           while (indexRemoving(arrayTasks, projectName) !== null) {
             arrayTasks.splice(indexRemoving(arrayTasks, projectName), 1);
           }
-           const allLists = document.querySelectorAll(".container-splitter");
+        
+        inputNewList.forEach((list, index) => {
+            if (list.list === projectName) {
 
-                  const numberTasks = document.querySelector(".number-tasks");        
+                inputNewList.splice(index, 1);
+            }
+        })
+          const allLists = document.querySelectorAll(".container-splitter");
+
+         const numberTasks = document.querySelector(".number-tasks");        
 
         assignNumberTasks(numberTasks, arrayTasks.length, 0);
         listCounter(allLists, projectName, arrayTasks.filter((e) => e.projectName === projectName).length);
-                    //   displayTasksSpecific([], mainTaskContainer);
+        
+        mainTaskContainer.classList.remove("list-selected-bg")
+        listNameContainer.remove();
 
+        displayTasks(arrayTasks, mainTaskContainer);
         }
 
         const nameList = e.target.closest(".container-splitter");            

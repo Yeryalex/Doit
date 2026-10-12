@@ -69,14 +69,24 @@ function taskSubmission() {
             const arraySpecific = arrayTasks.filter((item) => item.projectName === mainTaskContainer.attributes[1].value);
 
             displayTasksSpecific(arraySpecific, mainTaskContainer);
+            listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
+
         }
         else {
-            listSelected = inputNewList.find((e) => e.checked === true).list;
-            arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, false));
+            if (inputNewList.every((e) => e.checked === false) && inputNewList.length) {
+                inputNewList[0].checked = true;
+            }
+            if (inputNewList.length) {
+                listSelected = inputNewList.find((e) => e.checked === true).list ;
+            }
+            else 
+            {
+                listSelected = "random-notes"
+            }
+            arrayTasks.unshift(new taskInfo(listSelected , title.value, null, null, false));
             displayTasks(arrayTasks, mainTaskContainer);
+            listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
         }
-        // console.log(arrayTasks)
-        listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);         
         form.reset();
     });
 }

@@ -413,12 +413,8 @@ p.title {
   height: 40px;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: 20px 20px 20px 30px;
   color: var(--color-ink-1);
-}
-
-.my-list-separator {
-  padding: 0 10px;
 }
 
 .list-section-title {

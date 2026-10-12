@@ -40,7 +40,7 @@ function handleFormList() {
         container.classList.add("list-counter-container");
         listElement.classList.add("sidebar-list-button");
         containerSplitter.classList.add("container-splitter");
-        deleteList.classList.add("delete-list");
+        // deleteList.classList.add("delete-list");
         listElement.innerText = listName;
 
         containerSplitter.appendChild(listElement);

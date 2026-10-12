@@ -16,6 +16,9 @@ function handleIconShowsModal(event) {
         while (modalContainButtons.firstChild) {
             modalContainButtons.removeChild(modalContainButtons.firstChild);
         }
+        if (inputNewList.every((e) => e.checked === false) && inputNewList.length) {
+            inputNewList[0].checked = true;
+        }
 
         inputNewList.forEach((listName) => {
  
@@ -31,7 +34,7 @@ function handleIconShowsModal(event) {
             if (listName.checked) {
                 checkIcon.classList.toggle("icon-section-unit");
             }
-
+            
             list.innerText = listName.list;
 
             container.appendChild(list);
