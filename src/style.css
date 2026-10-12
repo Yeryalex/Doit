@@ -607,7 +607,8 @@ p.title {
 .list-counter-container {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  justify-content: space-between;
+  padding-right: 20px;
 }
 
 .list-counter-container:hover {
@@ -626,6 +627,23 @@ p.title {
   font-size: small;
   font-weight: 900;
 }
+
+.container-splitter {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delete-list {
+  width: 20px;
+  height: 20px;
+  background-image: url(/src/icons/trash-can-outline.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
 
 /* ////////////////DIALOG/////////////////////////// */
 

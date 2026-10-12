@@ -56,7 +56,7 @@ function taskSubmission() {
         
         e.preventDefault();
         
-        const allLists = document.querySelectorAll(".list-counter-container");
+        const allLists = document.querySelectorAll(".container-splitter");
 
         assignNumberTasks(numberTasks, arrayTasks.length, 1);
 
@@ -75,7 +75,7 @@ function taskSubmission() {
             arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, false));
             displayTasks(arrayTasks, mainTaskContainer);
         }
-        
+        // console.log(arrayTasks)
         listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);         
         form.reset();
     });

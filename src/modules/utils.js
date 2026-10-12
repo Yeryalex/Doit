@@ -74,7 +74,7 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
                     displayTasks(arrayTasks, mainTaskContainer);
             }
         });
-        const allLists = document.querySelectorAll(".list-counter-container");
+        const allLists = document.querySelectorAll(".container-splitter");
 
         let listSelected = taskContainer.attributes[1].nodeValue;
 

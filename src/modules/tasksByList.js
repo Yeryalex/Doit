@@ -1,7 +1,7 @@
 import { displayTasks } from "./utils.js";
 import { arrayTasks } from "../index.js";
 import { mainTaskContainer } from "./taskSubmission.js";
-
+import { assignNumberTasks, listCounter } from "./listCounter.js";
 
 function taskGeneratorSpecific(projectName, title, id, isChecked, priority) {
 
@@ -99,7 +99,6 @@ const displayTasksSpecific = (arrayTasks, mainTaskContainer) => {
         const titleProject = document.createElement("h3");
         titleProject.classList.add("title-project");
         titleProject.innerText = `${arrayTasks[0].projectName} List`;
-        
         mainTaskContainer.appendChild(titleProject);
         
         arrayTasks.forEach((e) => {
@@ -128,6 +127,18 @@ function noTasksMessage(mainTaskContainer) {
     mainTaskContainer.appendChild(messageNoTasks);
 }
 
+function indexRemoving(arrayTasks, projectName) {
+
+    let pos = null;
+    arrayTasks.forEach((task, index) => {
+        if (task.projectName === projectName) {
+            pos = index;
+            return ;
+        }
+    })
+    return (pos >= 0 ? (pos) : (null));
+}
+
 function tasksByList() {
 
     const selectedList = document.querySelector(".list-names-container");
@@ -145,7 +156,28 @@ function tasksByList() {
 
     selectedList.addEventListener("click", (e) => {
 
-        const nameList = e.target.closest(".list-counter-container");       
+        const listNameContainer = e.target.closest(".list-counter-container");  
+        
+        if (!listNameContainer) return ;
+        const deleteButtonList = e.target.closest(".delete-list");
+
+        if (deleteButtonList) { 
+            const projectName = listNameContainer.children[0].children[0].innerText;
+            
+          while (indexRemoving(arrayTasks, projectName) !== null) {
+            arrayTasks.splice(indexRemoving(arrayTasks, projectName), 1);
+          }
+           const allLists = document.querySelectorAll(".container-splitter");
+
+                  const numberTasks = document.querySelector(".number-tasks");        
+
+        assignNumberTasks(numberTasks, arrayTasks.length, 0);
+        listCounter(allLists, projectName, arrayTasks.filter((e) => e.projectName === projectName).length);
+                    //   displayTasksSpecific([], mainTaskContainer);
+
+        }
+
+        const nameList = e.target.closest(".container-splitter");            
 
         if (!nameList ) return ;
 
@@ -154,10 +186,8 @@ function tasksByList() {
             listForm.classList.remove("modal-showlist-icon");
             mainTaskContainer.classList.add("list-selected-bg");
             mainTaskContainer.setAttribute("name", nameList.children[0].innerText);
-            
-            const specificTasks = arrayTasks.filter((tasks) => tasks.projectName === nameList.children[0].innerText); 
 
-            displayTasksSpecific(specificTasks, mainTaskContainer)
+            displayTasksSpecific([], mainTaskContainer);
             return ;
         }
        
@@ -165,7 +195,6 @@ function tasksByList() {
         mainTaskContainer.classList.add("list-selected-bg");
         mainTaskContainer.setAttribute("name", nameList.children[0].innerText);
         const specificTasks = arrayTasks.filter((tasks) => tasks.projectName === nameList.children[0].innerText); 
-
         displayTasksSpecific(specificTasks, mainTaskContainer)
     })
 

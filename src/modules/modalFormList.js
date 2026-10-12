@@ -32,16 +32,21 @@ function handleFormList() {
         inputNewList.push({list : listName, checked : false});
         
         const container = document.createElement("div");
+        const containerSplitter = document.createElement("div");
         const listElement = document.createElement("button");
         const counter = document.createElement("div");
+        const deleteList = document.createElement("div");
 
         container.classList.add("list-counter-container");
         listElement.classList.add("sidebar-list-button");
-
+        containerSplitter.classList.add("container-splitter");
+        deleteList.classList.add("delete-list");
         listElement.innerText = listName;
 
-        container.appendChild(listElement);
-        container.appendChild(counter);
+        containerSplitter.appendChild(listElement);
+        containerSplitter.appendChild(counter);
+        container.appendChild(containerSplitter);
+        container.appendChild(deleteList);
         listNamesContainer.appendChild(container);
 
         modalForm.reset();
