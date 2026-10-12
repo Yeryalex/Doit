@@ -27,7 +27,7 @@ const taskToggle = (mainTaskContainer, arrayTasks) => {
                 else {
                     svgContainer.classList.toggle("svg-style");
                     svgContainer.style.scale = "0";
-                    checkButton.style.border = "1px solid rgb(75, 75, 75)";
+                    checkButton.style.border = "1px solid #e4e4e4";
                 }
             }
         });
