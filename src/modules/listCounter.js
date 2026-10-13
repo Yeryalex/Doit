@@ -8,7 +8,6 @@ function assignNumberTasks(component, number, add) {
 function listCounter(allLists , listSelected, listCount) {
     
     allLists.forEach((nodeList) => {
-        console.dir(nodeList)
         if (nodeList.children[0].innerText === listSelected) {
 
             nodeList.children[1].innerText = listCount;

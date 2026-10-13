@@ -49,7 +49,6 @@ function handleFormList() {
         listNamesContainer.appendChild(container);
         const formTask= document.querySelector("#task-form");
 
-        // console.dir(formTask.children[0].classList.contains("modal-showlist-icon"))
         if (!formTask.children[0].classList.contains("modal-showlist-icon")) {
             formTask.children[0].classList.add("modal-showlist-icon");
         }

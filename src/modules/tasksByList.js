@@ -113,7 +113,6 @@ const displayTasksSpecific = (arrayTasks, mainTaskContainer) => {
         titleProject.innerText = `${mainTaskContainer.attributes[1].value} List`;
         noTasksMessage(mainTaskContainer);
         mainTaskContainer.appendChild(titleProject);
-
     }
 }
 
@@ -126,6 +125,10 @@ function noTasksMessage(mainTaskContainer) {
     messageNoTasks.innerText = "There are not tasks";
 
     mainTaskContainer.appendChild(messageNoTasks);
+}
+
+function clearNoTaskMessage(mainTaskContainer) {
+    if (mainTaskContainer) mainTaskContainer.remove();
 }
 
 function indexRemoving(arrayTasks, projectName) {
@@ -151,7 +154,15 @@ function tasksByList() {
         mainTaskContainer.classList.remove("list-selected-bg");
         listForm.classList.add("modal-showlist-icon");
 
-        arrayTasks.length ? displayTasks(arrayTasks, mainTaskContainer): noTasksMessage(mainTaskContainer);
+        if (arrayTasks.length) {
+            displayTasks(arrayTasks, mainTaskContainer)
+        }
+        else {
+            noTasksMessage(mainTaskContainer);
+            setTimeout(() => {
+            clearNoTaskMessage(mainTaskContainer.children[0]);
+        }, "2000");
+        }
     })
 
 
@@ -175,8 +186,6 @@ function tasksByList() {
 
     })
     })
-
-
 
     selectedList.addEventListener("click", (e) => {
 

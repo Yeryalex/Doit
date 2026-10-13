@@ -5,6 +5,7 @@ import { taskSubmission, mainTaskContainer } from "./modules/taskSubmission.js";
 import { showListModal } from "./modules/showModalList.js";
 import { displayDescriptionTask } from "./modules/displayDescription.js";
 import { tasksByList } from "./modules/tasksByList.js";
+import { deleteAllTasks } from "./modules/deleteAll.Task.js";
 
 const arrayTasks = [];
 
@@ -16,5 +17,6 @@ taskToggle(mainTaskContainer, arrayTasks);
 deleteButton(mainTaskContainer, arrayTasks);
 handleFormList();
 displayDescriptionTask();
+deleteAllTasks();
 
 export { arrayTasks }
