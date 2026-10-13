@@ -40,7 +40,6 @@ function handleFormList() {
         container.classList.add("list-counter-container");
         listElement.classList.add("sidebar-list-button");
         containerSplitter.classList.add("container-splitter");
-        // deleteList.classList.add("delete-list");
         listElement.innerText = listName;
 
         containerSplitter.appendChild(listElement);
@@ -48,6 +47,13 @@ function handleFormList() {
         container.appendChild(containerSplitter);
         container.appendChild(deleteList);
         listNamesContainer.appendChild(container);
+        const formTask= document.querySelector("#task-form");
+
+        // console.dir(formTask.children[0].classList.contains("modal-showlist-icon"))
+        if (!formTask.children[0].classList.contains("modal-showlist-icon")) {
+            formTask.children[0].classList.add("modal-showlist-icon");
+        }
+
 
         modalForm.reset();
         addProjectModal.close();

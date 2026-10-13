@@ -146,26 +146,44 @@ function tasksByList() {
     const allMyTasks = document.querySelector(".all-mytasks-section");
     const listForm = document.querySelector(".modal-showlist-icon");
 
-
     allMyTasks.addEventListener("click", (e) => {
 
         mainTaskContainer.classList.remove("list-selected-bg");
         listForm.classList.add("modal-showlist-icon");
 
         arrayTasks.length ? displayTasks(arrayTasks, mainTaskContainer): noTasksMessage(mainTaskContainer);
-})
+    })
+
+
+    selectedList.addEventListener("mouseenter", () => {
+            const list = document.querySelectorAll(".list-counter-container")
+
+        list.forEach((li) => {
+
+        li.addEventListener("mouseenter", () => {
+
+           li.children[1].classList.add("delete-list");
+        })
+
+    })
+    list.forEach((li) => {
+
+        li.addEventListener("mouseleave", () => {
+
+           li.children[1].classList.remove("delete-list");
+        })
+
+    })
+    })
+
+
 
     selectedList.addEventListener("click", (e) => {
 
         const listNameContainer = e.target.closest(".list-counter-container");  
         
         if (!listNameContainer) return ;
-        listNameContainer.addEventListener("mouseenter", () => {
 
-            listNameContainer.children[1].classList.add("delete-list");
-            // const deleteButtonList = e.target.closest(".delete-list");
-
-        })
         const deleteButtonList = e.target.closest(".delete-list");
 
         if (deleteButtonList) { 

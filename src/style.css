@@ -197,7 +197,7 @@ p.title {
 
 .general-task-container {
   display: grid;
-  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 50px 1fr 30px;
   border-radius: 10px;
   background-color: var(--card-bg-1-color);
   opacity: 0.9;
@@ -253,13 +253,13 @@ p.title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 360px;
 }
 
 .style-button-container {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .button-selection {
@@ -582,13 +582,17 @@ p.title {
 /* /////////////////////////////LIST IN THE SIDEBAR/////////////////// */
 
 .sidebar-list-button {
-  padding: 0 30px;
+  padding: 0 0 0 30px;
   text-align: start;
   height: 40px;
   border: none;
   color: var(--card-bg-5-color);
   background-color: transparent;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 130px;
 }
 
 .list-names-container {
@@ -604,7 +608,6 @@ p.title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 20px;
 }
 
 .list-counter-container:hover {
@@ -627,6 +630,7 @@ p.title {
 .container-splitter {
   display: flex;
   align-items: center;
+  /* justify-content: baseline; */
   cursor: pointer;
 }
 
@@ -638,7 +642,7 @@ p.title {
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-}
+margin-right: 20px;}
 
 
 /* ////////////////DIALOG/////////////////////////// */
