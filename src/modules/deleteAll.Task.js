@@ -16,8 +16,8 @@ function deleteAllTasks() {
         arrayTasks.splice(0, arrayTasks.length);
 
         localStorage.setItem("arrayTasks", JSON.stringify(arrayTasks));
-
         const allLists = document.querySelectorAll(".container-splitter");
+
         const numberTasks = document.querySelector(".number-tasks");        
 
         assignNumberTasks(numberTasks, arrayTasks.length, 0);

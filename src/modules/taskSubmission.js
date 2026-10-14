@@ -1,9 +1,10 @@
-import { arrayTasks, localStorage } from "../index.js";
+import { arrayTasks } from "../index.js";
 import { inputNewList } from "../index.js";
 import { taskInfo } from "./taskClass.js";
 import { displayTasks } from "./utils.js";
 import { assignNumberTasks, listCounter} from "./listCounter.js";
 import { displayTasksSpecific } from "./tasksByList.js";
+import { localStorage } from "./localStorage.js";
 
 const form = document.querySelector("#task-form");
 const title = document.querySelector("#title");

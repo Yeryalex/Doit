@@ -3,7 +3,7 @@ import { arrayTasks } from "../index.js";
 import { mainTaskContainer } from "./taskSubmission.js";
 import { assignNumberTasks, listCounter } from "./listCounter.js";
 import { inputNewList } from "../index.js";
-import { localStorage } from "../index.js";
+import { localStorage } from "./localStorage.js";
 
 function taskGeneratorSpecific(projectName, title, id, isChecked, priority) {
 
@@ -12,9 +12,6 @@ function taskGeneratorSpecific(projectName, title, id, isChecked, priority) {
     const taskContainer = document.createElement("div");
     const headerBar = document.createElement("div"); 
     const priorityBar = document.createElement("div"); 
-    // const typeTaskContainer = document.createElement("div");
-    // const typeTaskLogo = document.createElement("p");
-    // const typeTask = document.createElement("p");
     const ptitle = document.createElement("h3");
     const checkboxContainer = document.createElement("div");
     const buttonCheck = document.createElement("button");
@@ -31,9 +28,6 @@ function taskGeneratorSpecific(projectName, title, id, isChecked, priority) {
     deleteButton.setAttribute("class", "button-selection");
     deleteButtonContainer.setAttribute("class", "delete-button-container");
     headerBar.classList.add("header-bar");
-    // typeTask.classList.add("type-task-list");
-    // typeTaskLogo.classList.add("type-task-logo");
-    // typeTaskContainer.classList.add("type-task-container");
 
     if (isChecked) {
 
@@ -49,40 +43,19 @@ function taskGeneratorSpecific(projectName, title, id, isChecked, priority) {
         priorityBar.style.height = "4px"
         priorityBar.style.width = "30%"
         priorityBar.style.marginTop = "5px"
-
-        // priorityBar.innerText = "Priority"
     }
 
     taskContainer.classList.add("task");
-    // tagSection.classList.add("tag-section");
-    // pdate.classList.add("pdate");
-    // ppriority.classList.add("ppriority");
     ptitle.classList.add("title-task")
-    // pdescription.classList.add("description-task")
-    
 
-    // typeTask.textContent = `my lists > ${projectName}`;
     ptitle.innerText = title;
-    // pdescription.innerText = description;
-    // pdate.innerText = dueDate;
-    // ppriority.innerText = priority;
-
-    // typeTaskContainer.appendChild(typeTaskLogo);
-    // typeTaskContainer.appendChild(typeTask);
 
     buttonCheck.appendChild(svgContainer);
     checkboxContainer.appendChild(buttonCheck);
-    // headerBar.appendChild(typeTaskContainer);
     headerBar.appendChild(priorityBar);
     taskContainer.appendChild(ptitle);
     taskContainer.appendChild(headerBar);
-
-    // taskContainer.appendChild(pdescription);
-    // tagSection.appendChild(pdate);
-    // tagSection.appendChild(ppriority);
-    // taskContainer.appendChild(tagSection);
     deleteButtonContainer.appendChild(deleteButton)
-
     generalTaskContainer.appendChild(checkboxContainer);
     generalTaskContainer.appendChild(taskContainer);
     generalTaskContainer.appendChild(deleteButtonContainer);

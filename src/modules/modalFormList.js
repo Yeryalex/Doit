@@ -1,6 +1,6 @@
-import { localStorage } from "../index.js";
-
+import { localStorage } from "./localStorage.js";
 import { inputNewList } from "../index.js";
+
 const listNamesContainer = document.querySelector(".list-names-container");
 const addListButton = document.querySelector("#add-list");
 const addProjectModal = document.querySelector("#dialog-add-list");

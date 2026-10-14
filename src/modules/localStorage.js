@@ -1,3 +1,14 @@
+// import { inputNewList } from "./modalFormList.js";
+// import { arrayTasks } from "../index.js";
+import { displayListSidebar } from "./modalFormList.js";
+import { displayTasks } from "./utils.js";
+import { listCounter, assignNumberTasks} from "./listCounter.js";
+import { mainTaskContainer } from "./taskSubmission.js";
+import { taskInfo } from "./taskClass.js";
+
+let localStorage = window.localStorage;
+
+
 function storageAvailable(type) {
   let storage;
   try {
@@ -16,16 +27,50 @@ function storageAvailable(type) {
   }
 }
 
+function storage(arrayTasks, inputNewList) {
+
 if (storageAvailable("localStorage")) {
 
+if (localStorage.getItem("arrayTasks")) {
 
-    // let storage = window.localStorage;
-    // // storage.clear();
+    arrayTasks = JSON.parse(localStorage.getItem("arrayTasks"));
+    arrayTasks.forEach((task) => {
+        Object.setPrototypeOf(task, taskInfo.prototype);
+    });
+    
+    const allLists = document.querySelectorAll(".container-splitter");
+    const numberTasks = document.querySelector(".number-tasks");        
 
-    // storage.setItem("arrayTasks", JSON.stringify(arrayTasks));
-
-    // console.log(JSON.parse(storage.getItem("x")))
-
-} else {
-
+    assignNumberTasks(numberTasks, arrayTasks.length, 0);
+        
+    displayTasks(arrayTasks, mainTaskContainer);
 }
+
+if (localStorage.getItem("inputList")) {
+
+    inputNewList = JSON.parse(localStorage.getItem("inputList"));
+
+
+    inputNewList.forEach((list) => displayListSidebar(list.list));
+
+    const allLists = document.querySelectorAll(".container-splitter");
+    inputNewList.forEach((list) => {
+            listCounter(allLists, list.list, arrayTasks.filter((e) => e.projectName === list.list).length);
+        })
+
+
+}else {
+   
+    inputNewList.push({list : "Personal", checked : true});
+    displayListSidebar(inputNewList[0].list);
+        const allLists = document.querySelectorAll(".container-splitter");
+    inputNewList.forEach((list) => {
+            listCounter(allLists, list.list, arrayTasks.filter((e) => e.projectName === list.list).length);
+        })
+}
+
+
+} 
+}
+
+export { localStorage, storage}
