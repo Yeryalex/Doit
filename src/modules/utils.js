@@ -1,7 +1,7 @@
 import { taskGenerator } from "./taskGenerator.js";
 import { arrayTasks } from "../index.js";
 import { assignNumberTasks } from "./listCounter.js";
-import { inputNewList } from "./modalFormList.js";
+import { inputNewList } from "../index.js";
 import { listCounter } from "./listCounter.js";
 import { displayTasksSpecific } from "./tasksByList.js";
 
@@ -77,6 +77,8 @@ const deleteButton = (mainTaskContainer, arrayTasks) => {
         const allLists = document.querySelectorAll(".container-splitter");
 
         let listSelected = taskContainer.attributes[1].nodeValue;
+
+        localStorage.setItem("arrayTasks", JSON.stringify(arrayTasks));
 
         assignNumberTasks(numberTasks, arrayTasks.length, 0);
         listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);

@@ -2,7 +2,8 @@ import { displayTasks } from "./utils.js";
 import { arrayTasks } from "../index.js";
 import { mainTaskContainer } from "./taskSubmission.js";
 import { assignNumberTasks, listCounter } from "./listCounter.js";
-import { inputNewList } from "./modalFormList.js";
+import { inputNewList } from "../index.js";
+import { localStorage } from "../index.js";
 
 function taskGeneratorSpecific(projectName, title, id, isChecked, priority) {
 
@@ -208,6 +209,10 @@ function tasksByList() {
                 inputNewList.splice(index, 1);
             }
         })
+
+        localStorage.setItem("arrayTasks", JSON.stringify(arrayTasks));
+        localStorage.setItem("inputList", JSON.stringify(inputNewList));
+
           const allLists = document.querySelectorAll(".container-splitter");
 
          const numberTasks = document.querySelector(".number-tasks");        

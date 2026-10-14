@@ -10,11 +10,6 @@ class taskInfo {
         this.id = self.crypto.randomUUID();
         this.isChecked = false;
     }
-    
-
-    getTitle() {
-        return(this.title)
-    }
 
     revertCheck() {
         this.isChecked = !this.isChecked;

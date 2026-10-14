@@ -1,5 +1,5 @@
-import { arrayTasks } from "../index.js";
-import { inputNewList } from "./modalFormList.js";
+import { arrayTasks, localStorage } from "../index.js";
+import { inputNewList } from "../index.js";
 import { taskInfo } from "./taskClass.js";
 import { displayTasks } from "./utils.js";
 import { assignNumberTasks, listCounter} from "./listCounter.js";
@@ -65,7 +65,8 @@ function taskSubmission() {
             
             listSelected = mainTaskContainer.attributes[1].value;
             arrayTasks.unshift(new taskInfo(listSelected, title.value, null, null, false));
-        
+            
+
             const arraySpecific = arrayTasks.filter((item) => item.projectName === mainTaskContainer.attributes[1].value);
 
             displayTasksSpecific(arraySpecific, mainTaskContainer);
@@ -81,12 +82,19 @@ function taskSubmission() {
             }
             else 
             {
-                listSelected = "random-notes"
+                listSelected = "random-notes";
             }
             arrayTasks.unshift(new taskInfo(listSelected , title.value, null, null, false));
             displayTasks(arrayTasks, mainTaskContainer);
             listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
         }
+
+
+///////////////////////////////////////////////
+        localStorage.setItem("arrayTasks", JSON.stringify(arrayTasks));
+///////////////////////////////////////
+
+
         form.reset();
     });
 }

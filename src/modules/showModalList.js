@@ -1,4 +1,4 @@
-import { inputNewList } from "./modalFormList.js";
+import { inputNewList } from "../index.js";
 
 const iconList = document.querySelector(".modal-showlist-icon");
 const modalContainer = document.querySelector(".modal-container");

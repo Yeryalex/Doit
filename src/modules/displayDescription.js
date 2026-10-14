@@ -115,7 +115,9 @@ function displayDescriptionTask() {
 
                     mainTaskContainer.classList.contains("list-selected-bg") ? displayTasksSpecific(arraySpecific, mainTaskContainer) :
                     displayTasks(arrayTasks, mainTaskContainer);
-
+                    
+                    localStorage.setItem("arrayTasks", JSON.stringify(arrayTasks));
+                    
                     divGeneralContainer.remove();
                 })
             }

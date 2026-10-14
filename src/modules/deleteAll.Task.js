@@ -1,6 +1,6 @@
 import { arrayTasks } from "../index.js";
 import { listCounter } from "./listCounter.js";
-import { inputNewList } from "./modalFormList.js";
+import { inputNewList } from "../index.js";
 import { assignNumberTasks } from "./listCounter.js";
 import { displayTasks } from "./utils.js";
 import { mainTaskContainer } from "./taskSubmission.js";
@@ -13,7 +13,9 @@ function deleteAllTasks() {
 
     deleteAllButton.addEventListener("click", () => {
 
-        arrayTasks.splice(0, arrayTasks.length)
+        arrayTasks.splice(0, arrayTasks.length);
+
+        localStorage.setItem("arrayTasks", JSON.stringify(arrayTasks));
 
         const allLists = document.querySelectorAll(".container-splitter");
         const numberTasks = document.querySelector(".number-tasks");        
