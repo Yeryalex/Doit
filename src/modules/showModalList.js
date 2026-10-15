@@ -1,4 +1,4 @@
-import { inputNewList } from "../index.js";
+import { inputNewList } from "./localStorage.js";
 
 const iconList = document.querySelector(".modal-showlist-icon");
 const modalContainer = document.querySelector(".modal-container");

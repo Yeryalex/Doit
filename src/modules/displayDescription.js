@@ -1,5 +1,5 @@
 import { mainTaskContainer } from "./taskSubmission.js"
-import { arrayTasks } from "../index.js";
+import { arrayTasks } from "./localStorage.js";
 import { displayTasks } from "./utils.js";
 import {format} from "date-fns";
 import { displayTasksSpecific } from "./tasksByList.js";

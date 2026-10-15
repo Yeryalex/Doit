@@ -1,9 +1,7 @@
 import { displayTasks } from "./utils.js";
-import { arrayTasks } from "../index.js";
 import { mainTaskContainer } from "./taskSubmission.js";
 import { assignNumberTasks, listCounter } from "./listCounter.js";
-import { inputNewList } from "../index.js";
-import { localStorage } from "./localStorage.js";
+import { arrayTasks, inputNewList, localStorage } from "./localStorage.js";
 
 function taskGeneratorSpecific(projectName, title, id, isChecked, priority) {
 

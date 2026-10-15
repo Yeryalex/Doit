@@ -1,6 +1,5 @@
-import { arrayTasks } from "../index.js";
+import { arrayTasks, inputNewList } from "./localStorage.js";
 import { listCounter } from "./listCounter.js";
-import { inputNewList } from "../index.js";
 import { assignNumberTasks } from "./listCounter.js";
 import { displayTasks } from "./utils.js";
 import { mainTaskContainer } from "./taskSubmission.js";

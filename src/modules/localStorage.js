@@ -1,13 +1,13 @@
-// import { inputNewList } from "./modalFormList.js";
-// import { arrayTasks } from "../index.js";
 import { displayListSidebar } from "./modalFormList.js";
 import { displayTasks } from "./utils.js";
 import { listCounter, assignNumberTasks} from "./listCounter.js";
 import { mainTaskContainer } from "./taskSubmission.js";
 import { taskInfo } from "./taskClass.js";
+// import { arrayTasks, inputNewList, localStorage } from "../index.js";
 
 let localStorage = window.localStorage;
-
+let arrayTasks = [];
+let inputNewList = [];
 
 function storageAvailable(type) {
   let storage;
@@ -27,17 +27,17 @@ function storageAvailable(type) {
   }
 }
 
-function storage(arrayTasks, inputNewList) {
+function storage() {
 
 if (storageAvailable("localStorage")) {
 
 if (localStorage.getItem("arrayTasks")) {
 
+
     arrayTasks = JSON.parse(localStorage.getItem("arrayTasks"));
     arrayTasks.forEach((task) => {
         Object.setPrototypeOf(task, taskInfo.prototype);
     });
-    
     const allLists = document.querySelectorAll(".container-splitter");
     const numberTasks = document.querySelector(".number-tasks");        
 
@@ -46,12 +46,14 @@ if (localStorage.getItem("arrayTasks")) {
     displayTasks(arrayTasks, mainTaskContainer);
 }
 
+
+
 if (localStorage.getItem("inputList")) {
 
+
     inputNewList = JSON.parse(localStorage.getItem("inputList"));
-
-
     inputNewList.forEach((list) => displayListSidebar(list.list));
+
 
     const allLists = document.querySelectorAll(".container-splitter");
     inputNewList.forEach((list) => {
@@ -73,4 +75,4 @@ if (localStorage.getItem("inputList")) {
 } 
 }
 
-export { localStorage, storage}
+export { storage, arrayTasks, inputNewList, localStorage}

@@ -1,5 +1,4 @@
-import { localStorage } from "./localStorage.js";
-import { inputNewList } from "../index.js";
+import { inputNewList, localStorage } from "./localStorage.js";
 
 const listNamesContainer = document.querySelector(".list-names-container");
 const addListButton = document.querySelector("#add-list");
@@ -58,13 +57,13 @@ function handleFormList() {
 
         inputNewList.push({list : listName, checked : false});
         
-        displayListSidebar(listName);
-
         localStorage.setItem("inputList", JSON.stringify(inputNewList));
+
+        displayListSidebar(listName);
 
         modalForm.reset();
         addProjectModal.close();
     });
 }
 
-export { handleFormList , inputNewList, displayListSidebar}
+export { handleFormList , displayListSidebar}

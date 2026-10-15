@@ -9,13 +9,10 @@ import { deleteAllTasks } from "./modules/deleteAll.Task.js";
 import { taskInfo } from "./modules/taskClass.js";
 import { displayListSidebar } from "./modules/modalFormList.js";
 import { assignNumberTasks, listCounter } from "./modules/listCounter.js";
-import { storage } from "./modules/localStorage.js";
+import { storage, arrayTasks } from "./modules/localStorage.js";
 
-let arrayTasks = [];
-let inputNewList = [];
+storage();
 
-
-storage(arrayTasks, inputNewList);
 showListModal();
 tasksByList();
 taskSubmission();
@@ -24,6 +21,3 @@ deleteButton(mainTaskContainer, arrayTasks);
 handleFormList();
 displayDescriptionTask();
 deleteAllTasks();
-
-
-export { arrayTasks , inputNewList}

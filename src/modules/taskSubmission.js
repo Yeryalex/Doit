@@ -1,10 +1,8 @@
-import { arrayTasks } from "../index.js";
-import { inputNewList } from "../index.js";
+import { arrayTasks, inputNewList, localStorage } from "./localStorage.js"
 import { taskInfo } from "./taskClass.js";
 import { displayTasks } from "./utils.js";
 import { assignNumberTasks, listCounter} from "./listCounter.js";
 import { displayTasksSpecific } from "./tasksByList.js";
-import { localStorage } from "./localStorage.js";
 
 const form = document.querySelector("#task-form");
 const title = document.querySelector("#title");
@@ -78,23 +76,14 @@ function taskSubmission() {
             if (inputNewList.every((e) => e.checked === false) && inputNewList.length) {
                 inputNewList[0].checked = true;
             }
-            if (inputNewList.length) {
-                listSelected = inputNewList.find((e) => e.checked === true).list ;
-            }
-            else 
-            {
-                listSelected = "random-notes";
-            }
+            
+            (inputNewList.length) ? listSelected = inputNewList.find((e) => e.checked === true).list : listSelected = "random-notes";
             arrayTasks.unshift(new taskInfo(listSelected , title.value, null, null, false));
             displayTasks(arrayTasks, mainTaskContainer);
             listCounter(allLists, listSelected, arrayTasks.filter((e) => e.projectName === listSelected).length);
         }
 
-
-///////////////////////////////////////////////
         localStorage.setItem("arrayTasks", JSON.stringify(arrayTasks));
-///////////////////////////////////////
-
 
         form.reset();
     });
